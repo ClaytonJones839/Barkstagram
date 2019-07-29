@@ -9,9 +9,6 @@ import { AuthRoute } from '../util/route_util';
 const App = () => (
     <div>
         <header className="headerBar">
-            <Link to="/">
-                <h1 id="heading">Barkstagram</h1>
-            </Link>
             <GreetingContainer />
         </header>
 
