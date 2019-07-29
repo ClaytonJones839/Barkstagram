@@ -41,7 +41,7 @@ class SessionForm extends React.Component {
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <h1 className="login-logo">
-                        Instagram
+                        Barkstagram
                     </h1>
                     {this.renderErrors()}
                     <div className="login-form">
