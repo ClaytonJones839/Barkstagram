@@ -3,8 +3,7 @@ import { Route, Link } from 'react-router-dom'
 import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
-// import SearchContainer from './bench/search_container';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
@@ -14,6 +13,8 @@ const App = () => (
 
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignUpFormContainer} />
+        <ProtectedRoute exact path='/' component={LoginFormContainer} />
+        {/* <Redirect to='/login' /> */}
         {/* <Route exact path="/" component={SearchContainer} /> */}
     </div>
 )
