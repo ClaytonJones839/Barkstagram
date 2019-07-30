@@ -4,7 +4,7 @@ import {
     RECEIVE_ALL_POSTS, 
     RECEIVE_POST, 
     REMOVE_POST 
-} from '../actions/session_actions';
+} from '../actions/posts_actions';
 
 const postsReducer = ( state={}, action ) => {
     Object.freeze(state);
@@ -21,3 +21,5 @@ const postsReducer = ( state={}, action ) => {
             return state;
     }
 }
+
+export default postsReducer;
