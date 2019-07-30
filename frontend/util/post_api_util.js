@@ -28,7 +28,7 @@ export const updatePost = post => (
     })
 );
 
-export const deleteImage = id => (
+export const deletePost = id => (
     $.ajax({
         method: 'DELETE',
         url: `api/posts/${id}`,
