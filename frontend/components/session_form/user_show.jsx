@@ -28,6 +28,9 @@ class UserShow extends React.Component {
                         <li>
                             user photo 2
                         </li>
+                        <li>
+                            user photo 3
+                        </li>
                     </ul>
                 </h2>
             </div>
