@@ -25,7 +25,7 @@
     max-width: 350px;
     width: 100%;
     flex-direction: column;
-    margin-top: 75px;
+    margin-top: 50px;
     margin-right: 500px;
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -69,11 +69,11 @@
 }
 
 .login-input {
-    text-align: center;
+    text-align: left;
     width: 250px;
     height: 40px;
     background-color: #fafafa;
-    padding: 14px 0 2px 8px;
+    padding-left: 5px;
     text-overflow: ellipsis;
     font-size: 14px;
     margin: 3px;
@@ -116,6 +116,7 @@
     background-color: #3897f0;
     border: 1px solid #3897f0;
     border-radius: 4px;
+    outline: none;
 }
 
 .session-submit a {
