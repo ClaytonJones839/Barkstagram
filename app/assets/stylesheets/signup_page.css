@@ -48,11 +48,7 @@
 }
 
 .form-footer {
-    /* display: flex; */
-    /* justify-content: space-around; */
     margin-bottom: 10px;
-    /* width: 240px; */
-    /* margin-left: 50px; */
     color: darkgrey;
     font-weight: 100;
     font-size: 16px;

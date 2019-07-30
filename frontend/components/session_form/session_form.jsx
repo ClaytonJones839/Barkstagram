@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import Typed from 'typed.js';
+// import Typed from 'typed.js';
 
 class SessionForm extends React.Component {
     constructor(props) {
