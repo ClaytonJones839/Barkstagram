@@ -16,14 +16,19 @@ const receivePost = post => ({
     post
 });
 
-const removePost = post => ({
+const removePost = postId => ({
     type: REMOVE_POST,
-    post
+    postId
 });
 
 const receivePostErrors = errors => ({
     type: RECEIVE_POST_ERRORS,
     errors: errors
+});
+
+export const clearErrors = () => ({
+    type: CLEAR_POST_ERRORS,
+    errors: []
 });
 
 export const fetchPosts = () => dispatch => (
@@ -35,11 +40,6 @@ export const fetchPost = id => dispatch => {
     PostAPIUtil.fetchPost(id)
         .then(post => dispatch(receivePost(post)))
 };
-
-export const clearErrors = () => ({
-    type: CLEAR_POST_ERRORS,
-    errors: []
-});
 
 export const createPost = post => dispatch => (
     PostAPIUtil.createPost(post)
