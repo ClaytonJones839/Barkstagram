@@ -37,6 +37,10 @@ class SessionForm extends React.Component {
 
     render() {
         return (
+            <div className="login-page-container">
+            <div className="login-page-left">
+                    <img className="login-left-image" src="https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png"/>
+            </div>
             <div className="login-page-right">
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -67,16 +71,17 @@ class SessionForm extends React.Component {
                         <input
                             className="session-submit" 
                             type="submit" 
-                            value={this.props.formType}
+                            value="Log in"
                         />
                     </div>
                 </form>
 
             </div>
                 <div className="login-signup-link">
-                    Don't have an account?
+                        Don't have an account?
                     <Link to="/signup"> Sign up</Link>
                 </div>
+            </div>
             </div>
         );
     }

@@ -7,7 +7,7 @@ import EmptyTestContainer from './session_form/empty_test'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
-    <div>
+    <div className="page">
         <header className="headerBar">
             <GreetingContainer />
         </header>

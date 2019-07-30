@@ -4,12 +4,9 @@
     justify-content: center;
     border: 1px solid #e6e6e6;
     background: white;
-    max-width: 350px;
-    width: 100%;
+    width: 350px;
     height: 345px;
-    /* margin-top: 12px; */
-    /* flex-direction: column; */
-    /* box-sizing: border-box; */
+    margin-top: 12px;
     border-radius: 2px;
     align-items: stretch;
     margin: 0 0 10px;
@@ -17,14 +14,37 @@
     text-align: center;
 }
 
+.login-page-container {
+    display: flex;
+    justify-content: space-around;
+}
+
 .login-page-right {
-  color: #262626;
-  justify-content: center;
-  margin-top: 12px;
-  max-width: 350px;
-  width: 100%;
-  flex-direction: column;
-  
+    color: #262626;
+    justify-content: center;
+    /* margin-top: 12px; */
+    max-width: 350px;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 75px;
+    margin-right: 200px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.login-page-left {
+    display: flex;
+    justify-content: center;
+    margin-left: 200px;
+    width: 470px;
+
+    height: 620px;
+
+}
+
+.login-left-image {
+    width: 470px;
+
+    height: 620px;
 }
 
 .login-input {
@@ -44,9 +64,34 @@
 .login-logo {
     font-family: 'Satisfy', cursive;
     font-weight: 50px;
+    margin-bottom: 40px;
 }
 .login-signup-link a {
     text-decoration: none;
+    font-weight: bolder;
+    color: #3897f0;
+}
+
+.session-submit, .new-user-submit {
+    width: 250px;
+    height: 40px;
+    background-color: #fafafa;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    margin: 3px;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    box-sizing: border-box;
+    margin-top: 10px;
+    background-color: #3897f0;
+    border: 1px solid #3897f0;
+    border-radius: 4px;
+}
+
+.session-submit:hover, .new-user-submit {
+    cursor: pointer;
 }
 
 .login-signup-link {

@@ -37,45 +37,51 @@ class SignUpForm extends React.Component {
 
     render() {
         return (
+                <div className="signup-page">
                 <div className="signup-form-container">
                     <form onSubmit={this.handleSubmit} className="signup-form-box">
                         <h1 className="login-logo">
                             Barkstagram
-                    </h1>
+                        </h1>
                         {this.renderErrors()}
                         <div className="signup-form">
                             <br />
-                            <label>Username:
-                            <input type="text"
+                            <label>
+                                <input type="text"
                                     value={this.state.username}
                                     onChange={this.update('username')}
                                     className="login-input"
+                                    placeholder="Username"
                                 />
                             </label>
                             <br />
-                            <label>Password:
-                        <input type="password"
+                            <label>
+                                <input type="password"
                                     value={this.state.password}
                                     onChange={this.update('password')}
                                     className="login-input"
+                                    placeholder="Password"
                                 />
                             </label>
                             <br />
                             <input
-                                className="session-submit"
+                                className="new-user-submit"
                                 type="submit"
-                                value={this.props.formType}
+                                value="Sign up"
                             />
                         </div>
                     </form>
                     <div className="login-signup-link">
                         Have an account?
-                    <Link to="/login"> Log in</Link>
+                        <Link to="/login"> Log in</Link>
                     </div>
+                </div>
+
                 </div>
 
         );
     }
 }
+
 
 export default withRouter(SignUpForm);
