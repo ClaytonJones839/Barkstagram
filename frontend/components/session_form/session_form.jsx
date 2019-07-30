@@ -54,7 +54,11 @@ class SessionForm extends React.Component {
         return (
             <div className="login-page-container">
             <div className="login-page-left">
+                <div className="login-left-image-container">
                     <img className="login-left-image" src="https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png"/>
+                    <img className="login-left-image-inner" src="https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg" />
+                    <img className="login-left-image-inner-2" src="https://scontent-mia3-2.xx.fbcdn.net/v/t1.0-9/66584318_10216687664477948_8152920814933508096_n.jpg?_nc_cat=102&_nc_oc=AQnEPH6-7NxFpkyMnw_BXmTU2rzKrFZBSczf4Z-Hoi6Nvnke87caQJHW3OFvd9LIcAI&_nc_ht=scontent-mia3-2.xx&oh=9be3dd7aeb2785cfde4691c9b4f0d4b2&oe=5DAA76BD" />
+                </div>
             </div>
             <div className="login-page-right">
                     {this.renderErrors()}
@@ -90,22 +94,20 @@ class SessionForm extends React.Component {
                             value="Log in"
                         />
                         <br/>
-                    <div className='session-submit'>
-                            <Link 
-                                to={`/login`} 
+                            <button className="session-submit"
                                 onClick={this.demoUser}>
                                 Demo Login
-                            </Link>
-                    </div>
-                    </div>
-                    
+                            </button>
+                        </div>
                 </form>
 
             </div>
                 <div className="login-signup-link">
+                    <div className="center">
                         Don't have an account?
-                    <p className="hide">/</p>
-                    <Link to="/signup"> Sign up</Link>
+                        &nbsp;
+                        <Link to="/signup"> Sign up</Link>
+                    </div>
                 </div>
             </div>
             </div>

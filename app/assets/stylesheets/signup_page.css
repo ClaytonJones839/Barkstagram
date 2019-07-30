@@ -4,13 +4,11 @@
     justify-content: center;
     color: #262626;
     justify-content: center;
-    /* margin-top: 12px; */
     max-width: 350px;
-    height: 345px;
+    height: 375px;
     width: 100%;
     flex-direction: column;
     margin-top: 75px;
-    /* margin-right: 200px; */
     font-family: 'Source Sans Pro', sans-serif;
 }
 
