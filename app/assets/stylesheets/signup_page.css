@@ -4,13 +4,11 @@
     justify-content: center;
     color: #262626;
     justify-content: center;
-    /* margin-top: 12px; */
     max-width: 350px;
     height: 345px;
     width: 100%;
     flex-direction: column;
     margin-top: 75px;
-    /* margin-right: 200px; */
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -50,11 +48,7 @@
 }
 
 .form-footer {
-    /* display: flex; */
-    /* justify-content: space-around; */
     margin-bottom: 10px;
-    /* width: 240px; */
-    /* margin-left: 50px; */
     color: darkgrey;
     font-weight: 100;
     font-size: 16px;

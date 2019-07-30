@@ -113,11 +113,8 @@
     border: 1px solid #e6e6e6;
     background: white;
     width: 100%;
-    /* box-sizing: border-box; */
     border-radius: 2px;
-    /* align-items: stretch; */
     margin: 0 0 10px;
-    /* padding-bottom: 20px; */
     padding-top: 20px;
     text-align: center;
 }
