@@ -6,9 +6,14 @@ class SignUpForm extends React.Component {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            email: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.clearErrors();
     }
 
     update(field) {
@@ -45,6 +50,18 @@ class SignUpForm extends React.Component {
                         </h1>
                         {this.renderErrors()}
                         <div className="signup-form">
+                            <span className="form-header">
+                                Sign up to see photos and videos from your friends.
+                            </span>
+                            <br />
+                            <label>
+                                <input type="text"
+                                    value={this.state.email}
+                                    onChange={this.update('email')}
+                                    className="login-input"
+                                    placeholder="Email"
+                                />
+                            </label>                            
                             <br />
                             <label>
                                 <input type="text"
@@ -69,10 +86,19 @@ class SignUpForm extends React.Component {
                                 type="submit"
                                 value="Sign up"
                             />
+                            <br />
+                            <span className="form-footer">
+                                By signing up, you agree to our
+                                <br />
+                                <strong>Terms , Data Policy</strong> and <strong>Cookies 
+                                <br />    
+                                Policy</strong> .
+                            </span>
                         </div>
                     </form>
                     <div className="login-signup-link">
                         Have an account?
+                        <p className="hide">/</p>
                         <Link to="/login"> Log in</Link>
                     </div>
                 </div>

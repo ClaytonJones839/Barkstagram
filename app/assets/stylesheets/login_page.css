@@ -5,7 +5,7 @@
     border: 1px solid #e6e6e6;
     background: white;
     width: 350px;
-    height: 345px;
+    height: 385px;
     margin-top: 12px;
     border-radius: 2px;
     align-items: stretch;
@@ -22,7 +22,6 @@
 .login-page-right {
     color: #262626;
     justify-content: center;
-    /* margin-top: 12px; */
     max-width: 350px;
     width: 100%;
     flex-direction: column;
@@ -43,7 +42,6 @@
 
 .login-left-image {
     width: 470px;
-
     height: 620px;
 }
 
@@ -60,11 +58,17 @@
     box-sizing: border-box;
 }
 
+.hide {
+    color: white;
+}
+.login-errors {
+    color: red;
+}
 
 .login-logo {
     font-family: 'Satisfy', cursive;
-    font-weight: 50px;
-    margin-bottom: 40px;
+    font-weight: 80;
+    margin-bottom: 20px;
 }
 .login-signup-link a {
     text-decoration: none;
@@ -90,6 +94,15 @@
     border-radius: 4px;
 }
 
+.session-submit a {
+    text-decoration: none;
+    margin-top: 7px;
+    font-size: 16px;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
 .session-submit:hover, .new-user-submit {
     cursor: pointer;
 }
@@ -100,12 +113,11 @@
     border: 1px solid #e6e6e6;
     background: white;
     width: 100%;
-    height: 30px;
     /* box-sizing: border-box; */
     border-radius: 2px;
     /* align-items: stretch; */
     margin: 0 0 10px;
-    padding-bottom: 10px;
-    padding-top: 25px;
+    /* padding-bottom: 20px; */
+    padding-top: 20px;
     text-align: center;
 }
