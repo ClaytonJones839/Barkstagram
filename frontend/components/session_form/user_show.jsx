@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import PostFormContainer from '../posts/post_form_container'
 
 class UserShow extends React.Component {
@@ -8,6 +8,7 @@ class UserShow extends React.Component {
             this.userPosts = this.props.userPosts;
             this.currentUser = this.props.currentUser;
             this.logout = this.props.logout
+            this.handleNewPostForm = this.handleNewPostForm.bind(this)
             // this.userPage = null;
             
             // if (this.props.allUsers[this.props.match.params.userId]) {
@@ -23,6 +24,11 @@ class UserShow extends React.Component {
     }
 
 
+    handleNewPostForm(e) {
+        e.preventDefault();
+        let path = `/new-post`;
+        this.props.history.push(path);
+    }
 
     render() {
         let userPhotos = this.props.userPosts.map(post => {
@@ -38,18 +44,17 @@ class UserShow extends React.Component {
         return (
             <div className="profile-container">
                 <div className="profile-top">
-                    <h2>{this.currentUser.username}</h2>
-                    <button className="header-button" onClick={this.logout}>Log Out</button>
+                    <h1>{this.currentUser.username}</h1>
+                        <div className="profile-top-buttons">
+                            <button className="profile-button" onClick={this.logout}>Log Out</button>
+                            <button className="profile-button" onClick={this.handleNewPostForm}>Add Photo</button>
+                        </div>
                 </div>
-
-                <br />
-                <h2>
                     <div className="profile-photo-index-container">
                         <ul className="profile-photo-index">
                             {userPhotos}
                         </ul>
                     </div>
-                </h2>
             </div>
         );
     }

@@ -30,6 +30,7 @@
 .signup-page {
     display: flex;
     justify-content: center;
+    margin-top: 120px;
 }
 
 .new-user-submit {
