@@ -34,10 +34,12 @@ class UserShow extends React.Component {
         let userPhotos = this.props.userPosts.map(post => {
             return(
                 <li key={post.id}>
-                    <img 
-                        className="user-page-photos"
-                        src={post.photoUrl} 
-                    />
+                    <Link to={`/posts/${post.id}`}>
+                        <img 
+                            className="user-page-photos"
+                            src={post.photoUrl} 
+                        />
+                    </Link>
                 </li>
             )
         })
@@ -51,14 +53,22 @@ class UserShow extends React.Component {
                     <div className="profile-top-up" >
                         <h1>{this.currentUser.username}</h1>
                         <div className="profile-top-buttons">
-                            <button className="profile-button" onClick={this.logout}>Log Out</button>
-                            <button className="profile-button" onClick={this.handleNewPostForm}>Add Photo</button>
+                            <button 
+                                className="profile-button" 
+                                onClick={this.logout}>
+                                Log Out
+                            </button>
+                            <button 
+                                className="profile-button" 
+                                onClick={this.handleNewPostForm}>
+                                Add Photo
+                            </button>
                         </div>
                     </div>
                     <div className="profile-top-down">
                         <span>## posts</span>
-                        <span>## followers</span>
-                        <span>## following</span>
+                        <span className="cursor">## followers</span>
+                        <span className="cursor">## following</span>
                     </div>
                     </div>
                 </div>

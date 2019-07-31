@@ -11,19 +11,20 @@
 
 .profile-top {
     display: flex;
-    /* width: 50%; */
-    width: 650px;
+    width: 700px;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .profile-container {
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     background-color: #fafafa;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .post-ul, .profile-photo-index {
@@ -38,7 +39,6 @@
 .profile-top-buttons {
     display: flex;
     justify-content: space-between;
-    margin-top: 15px;
 }
 
 
@@ -46,15 +46,15 @@
     background-color: transparent;
     border: 1px solid #dbdbdb;
     color: #262626;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     margin-right: 10px;
-    /* justify-content: space-between; */
     padding: 5px 5px;
     border-radius: 5px;
-    width: 100px;
-    height: 40px;
+    width: 80px;
+    height: 30px;
     align-content: center;
+    outline: none;
 }
 
 .profile-button:hover {
@@ -66,8 +66,18 @@
     border: 1px solid #dbdbdb;
     background-color: darkgrey;
     border-radius: 70px;
-    width: 115px;
-    height: 115px;
+    width: 125px;
+    height: 125px;
+}
+
+.profile-top-up {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile-top-down {
+    width: 500px;
 }
 
 .profile-top-up, .profile-top-down {
@@ -76,8 +86,11 @@
 }
 
 
-.profile-top-up {
-    width: 450px;
-    /* justify-content: space-between; */
+.profile-top-right {
+    width: 500px;
+}
+
+.cursor:hover {
+    cursor: pointer;
 }
 

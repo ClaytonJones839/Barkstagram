@@ -7,12 +7,13 @@ class PostShow extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.fetchPost(this.post.id)
-        // debugger;
+        // debugger
         this.props.fetchPost(this.props.postId);
     }
     render() {
         // debugger
+
+
         if (!this.props.post) {
             return (
                 <h2>
@@ -21,17 +22,54 @@ class PostShow extends React.Component {
             )
         }
 
+        const { photoUrl, author, body } = this.props.post;
         return (
-            <div>
-                <span>{this.props.post.user_id}</span>
-                <h3>
-                    Post Show Page
-                </h3>
-                <img
-                    className="post-pic-preview"
-                    src={this.props.post.photoUrl}
-                />
+
+
+        <section className="post-show-page">
+            <div className="post-show-container">
+                <div className="post-box">
+                    <img className="post-show-image"
+                        className="post-show-image"
+                        src={photoUrl}
+                    />
+                    <div className="post-show-detail-box">
+                        <div className="post-author">
+                            <span>
+                                {author}
+                            </span>
+                        </div>
+                        {/* <div className="post-body">
+
+                        </div> */}
+                        <div className="post-comments">
+                            <span>
+                                Comments coming soon
+                            </span>
+                            <span>
+                                {body}
+                            </span>
+                        </div>
+                        <div className="post-show-likes">
+                            <span>
+                                Liked by ###
+                            </span>
+                        </div>
+                        <div className="post-show-buttons">
+                            <span>
+                                Like button coming soon
+                            </span>
+                            <span>
+                                Comment button coming soon
+                            </span>
+                            <span>
+                                Comment input form
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
         );
     }
 }

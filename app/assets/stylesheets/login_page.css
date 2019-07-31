@@ -28,7 +28,7 @@
     flex-direction: column;
     margin-top: 50px;
     margin-right: 500px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .login-left-image-container {
@@ -131,7 +131,7 @@
 }
 
 .session-submit a {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: bolder;
     text-decoration: none;
     margin-top: 7px;
