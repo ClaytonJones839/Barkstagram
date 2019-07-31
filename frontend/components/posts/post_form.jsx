@@ -19,12 +19,12 @@ class PostForm extends React.Component {
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
         reader.onloadend = () =>
-            this.setState({ imageUrl: reader.result, imageFile: file });
+            this.setState({ photoUrl: reader.result, photoFile: file });
 
         if (file) {
             reader.readAsDataURL(file);
         } else {
-            this.setState({ imageUrl: "", imageFile: null });
+            this.setState({ photoUrl: "", photoFile: null });
         }
     }
 
@@ -61,8 +61,13 @@ class PostForm extends React.Component {
     render() {
 
         let postPreview;
-        if (this.state.imageUrl) {
-            postPreview = <img className="post-pic-preview" src={this.state.imageUrl} />
+
+        if (this.state.photoUrl) {
+            postPreview = 
+                <img 
+                    className="post-pic-preview" 
+                    src={this.state.photoUrl} 
+                />
         }
 
 
@@ -73,9 +78,10 @@ class PostForm extends React.Component {
                 </ul>
                 <form className="post-form" onSubmit={this.handleSubmit}>
                     <div className="upload-form-div">
-                        <label className='upload-post-button'>
+                        <label className='upload-photo' htmlFor="file-selector">
                             <input 
                                 className="photo-input-field" 
+                                id="file-selector"
                                 type="file" 
                                 onChange={this.handleFile}  />
                         </label>

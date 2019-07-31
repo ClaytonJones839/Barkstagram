@@ -1,0 +1,10 @@
+.post-index {
+    width: 250px;
+    height: 250px;
+    padding: 20px;
+}
+
+.post-ul {
+    display: flex;
+
+}

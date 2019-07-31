@@ -1,10 +1,15 @@
 import { connect } from 'react-redux';
-import { fetchPost, deletePost } from '../../actions/post_actions';
+import { fetchPost, deletePost } from '../../actions/posts_actions';
 import PostShow from './post_show';
 
-const mapStateToProps = (state, ownProps) => ({
-    post: state.posts[ownProps.match.params.postId]
-});
+const mapStateToProps = (state, ownProps) => {
+    const postId = ownProps.match.params.postId
+    // debugger;
+    return ({
+        post: state.entities.posts[postId],
+        postId
+    })
+};
             
 const mapDispatchToProps = dispatch => {
     return({

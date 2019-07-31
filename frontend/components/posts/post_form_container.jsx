@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
     return ({
         photo: "",
         body: "",
-        user_id: currentUser.id
+        // user_id: currentUser.id
     });
 };
 
