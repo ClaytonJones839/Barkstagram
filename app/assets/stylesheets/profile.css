@@ -11,7 +11,8 @@
 
 .profile-top {
     display: flex;
-    width: 50%;
+    /* width: 50%; */
+    width: 650px;
     justify-content: space-between;
     align-items: center;
 }
@@ -35,9 +36,9 @@
 }
 
 .profile-top-buttons {
-    /* padding */
     display: flex;
     justify-content: space-between;
+    margin-top: 15px;
 }
 
 
@@ -48,12 +49,35 @@
     font-size: 14px;
     font-weight: 600;
     margin-right: 10px;
-    justify-content: space-between;
-    padding: 5px 10px;
+    /* justify-content: space-between; */
+    padding: 5px 5px;
     border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    align-content: center;
 }
 
 .profile-button:hover {
     background-color:  rgb(238, 238, 238);
     cursor: pointer;
 }
+
+.profile-display-pic {
+    border: 1px solid #dbdbdb;
+    background-color: darkgrey;
+    border-radius: 70px;
+    width: 115px;
+    height: 115px;
+}
+
+.profile-top-up, .profile-top-down {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.profile-top-up {
+    width: 450px;
+    /* justify-content: space-between; */
+}
+

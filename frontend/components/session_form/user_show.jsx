@@ -44,11 +44,23 @@ class UserShow extends React.Component {
         return (
             <div className="profile-container">
                 <div className="profile-top">
-                    <h1>{this.currentUser.username}</h1>
+                    <div className="profile-display-pic">
+
+                    </div>
+                    <div className="profile-top-right">
+                    <div className="profile-top-up" >
+                        <h1>{this.currentUser.username}</h1>
                         <div className="profile-top-buttons">
                             <button className="profile-button" onClick={this.logout}>Log Out</button>
                             <button className="profile-button" onClick={this.handleNewPostForm}>Add Photo</button>
                         </div>
+                    </div>
+                    <div className="profile-top-down">
+                        <span>## posts</span>
+                        <span>## followers</span>
+                        <span>## following</span>
+                    </div>
+                    </div>
                 </div>
                     <div className="profile-photo-index-container">
                         <ul className="profile-photo-index">
