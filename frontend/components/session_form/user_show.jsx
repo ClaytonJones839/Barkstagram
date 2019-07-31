@@ -19,20 +19,13 @@ class UserShow extends React.Component {
         // const id = this.props.match.params.userId;
         // this.props.fetchUser(this.props.match.params.userId);
         this.props.fetchUser(this.currentUser.id);
+        this.props.fetchPosts();
     }
 
 
 
     render() {
-
-        // let displayUser;
-
-        // if (this.userPage) {
-        //     displayUser = this.userPage
-        // } else {
-        //     displayUser = this.currentUser
-        // }
-        let userPhotos = this.userPosts.map(post => {
+        let userPhotos = this.props.userPosts.map(post => {
             return(
                 <li key={post.id}>
                     <img 
@@ -43,20 +36,20 @@ class UserShow extends React.Component {
             )
         })
         return (
-            <div>
-                <span>{this.currentUser.username}</span>
-                <button className="header-button" onClick={this.logout}>Log Out</button>
-                <h3>
-                    User's Profile Page
-                </h3>
+            <div className="profile-container">
+                <div className="profile-top">
+                    <h2>{this.currentUser.username}</h2>
+                    <button className="header-button" onClick={this.logout}>Log Out</button>
+                </div>
+
                 <br />
                 <h2>
-                    User's Photos
-                    <ul>
-                        {userPhotos}
-                    </ul>
+                    <div className="profile-photo-index-container">
+                        <ul className="profile-photo-index">
+                            {userPhotos}
+                        </ul>
+                    </div>
                 </h2>
-                <PostFormContainer currentUser={this.currentUser} />
             </div>
         );
     }

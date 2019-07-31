@@ -8,11 +8,12 @@ class PostShow extends React.Component {
 
     componentDidMount() {
         // this.props.fetchPost(this.post.id)
+        // debugger;
         this.props.fetchPost(this.props.postId);
     }
     render() {
-
-        if (!this.post) {
+        // debugger
+        if (!this.props.post) {
             return (
                 <h2>
                     fetching post?
@@ -26,10 +27,10 @@ class PostShow extends React.Component {
                 <h3>
                     Post Show Page
                 </h3>
-                {/* <img
+                <img
                     className="post-pic-preview"
-                    src={this.state.photoUrl}
-                /> */}
+                    src={this.props.post.photoUrl}
+                />
             </div>
         );
     }
