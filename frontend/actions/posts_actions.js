@@ -41,12 +41,12 @@ export const fetchPost = id => dispatch => {
         .then(post => dispatch(receivePost(post)))
 };
 
-export const createPost = post => dispatch => (
-    PostAPIUtil.createPost(post)
-        .then(post => (dispatch(receivePost(post))),
-            err => (dispatch(receivePostErrors(err.responseJSON))
-            ))
-);
+export const createPost = post => dispatch => {
+    return (
+        PostAPIUtil.createPost(post)
+        .then(post => (dispatch(receivePost(post))))
+    )
+};
 
 export const updatePost = post => dispatch => (
     PostAPIUtil.updatePost(post)

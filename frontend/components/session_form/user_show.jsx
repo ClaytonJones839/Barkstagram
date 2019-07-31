@@ -1,16 +1,28 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PostFormContainer from '../posts/post_form_container'
 
 class UserShow extends React.Component {
     constructor(props) {
         super(props)
-    this.currentUser = this.props.currentUser;
-    this.logout = this.props.logout
+            // this.userPosts = this.props.userPosts;
+            this.currentUser = this.props.currentUser;
+            this.logout = this.props.logout
     }
 
     render() {
 
+
+        // let userPhotos = this.userPosts.map(post => {
+        //     return(
+        //         <li>
+        //             <img 
+        //                 className="user-page-photos"
+        //                 src={post.photo} 
+        //             />
+        //         </li>
+        //     )
+        // })
         return (
             <div>
                 <span>{this.currentUser.username}</span>
@@ -22,17 +34,10 @@ class UserShow extends React.Component {
                 <h2>
                     User's Photos
                     <ul>
-                        <li>
-                            user photo 1
-                        </li>
-                        <li>
-                            user photo 2
-                        </li>
-                        <li>
-                            user photo 3
-                        </li>
+                        {/* {userPhotos} */}
                     </ul>
                 </h2>
+                <PostFormContainer currentUser={this.currentUser} />
             </div>
         );
     }

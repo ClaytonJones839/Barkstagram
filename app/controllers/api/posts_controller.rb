@@ -37,12 +37,12 @@ class Api::PostsController < ApplicationController
         render json: ["Users are only able to delete pictures they have posted"], status: 401
       end
 
-      render: index
+      render :index
   end
   
   private
 
   def post_params
-    params.require(:bench).permit(:description, :photo)
+    params.require(:post).permit(:body, :photo, :user_id)
   end
 end
