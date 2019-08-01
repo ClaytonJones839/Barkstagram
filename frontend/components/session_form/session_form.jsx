@@ -39,6 +39,8 @@ class SessionForm extends React.Component {
     }
 
     renderErrors() {
+
+        if (this.props.map) {
         return(
         <ul className="login-errors">
             {this.props.errors.map((error, i) => (
@@ -47,7 +49,7 @@ class SessionForm extends React.Component {
                 </li>
             ))}
         </ul>
-        );
+        )};
     }
 
     render() {
