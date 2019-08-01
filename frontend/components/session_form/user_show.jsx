@@ -42,7 +42,7 @@ class UserShow extends React.Component {
         }
 
 
-        const { username } = this.props.profileUser
+        const { username, photoUrl } = this.props.profileUser
         let userPhotos = this.props.userPosts.map(post => {
             return(
                 <li key={post.id}>
@@ -59,7 +59,10 @@ class UserShow extends React.Component {
             <div className="profile-container">
                 <div className="profile-top">
                     <div className="profile-display-pic">
-
+                        <img 
+                            className="profile-display-pic"
+                            src={photoUrl}
+                        />
                     </div>
                     <div className="profile-top-right">
                     <div className="profile-top-up" >

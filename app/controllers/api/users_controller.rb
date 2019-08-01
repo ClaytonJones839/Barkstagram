@@ -1,6 +1,9 @@
 class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
+    # this should zip a file from the rails app
+    # doing this to prevent error from has_one_attached assoc. in user model
+    @user.photo.attach(io: File.open("#{Rails.root}/app/assets/images/default_profile_image.jpg"), filename: "default_profile_image.jpg")
 
     if @user.save
       login(@user)
@@ -33,6 +36,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :email, :bio)
+    params.require(:user).permit(:username, :password, :email, :bio, :photo)
   end
 end
