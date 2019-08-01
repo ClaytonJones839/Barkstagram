@@ -1,0 +1,129 @@
+.post-form-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.post-form {
+    /* border: 1px solid lightgray; */
+    /* margin-top: 125px; */
+    display: flex;
+
+    font-family: 'Roboto', sans-serif;
+    width: 750px;
+    height: 400px;
+    justify-content: space-between;
+}
+
+.upload-form-div {
+    /* display: flex; */
+    /* justify-content: flex-start; */
+    /* height: 500px; */
+    width: 400px;
+}
+
+.preview-div {
+    width: 400px;
+    height: 400px;
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+
+}
+
+.preview-outline {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 350px;
+    width: 350px;
+    margin: 25px;
+    border-radius: 5px;
+    background-color: rgba(218, 218, 218, 0.495);
+    font-size: 120px;
+}
+
+.post-pic-preview {
+    height: 350px;
+    width: 350px;
+    margin: 25px;
+    border-radius: 15px;
+}
+
+textarea {
+    height: 75px;
+    max-height: 75px;
+    max-width: 250px;
+    width: 250px;
+    margin: 25px;
+}
+
+.post-form-right {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+}
+
+
+.post-right-top, .post-right-bottom, .post-right-mid {
+    /* border: 1px solid lightgrey; */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    font-weight: bolder;
+}
+
+.post-right-top, .post-right-bottom {
+    height: 50px;
+    color:white;
+}
+
+.post-right-top {
+    background-color: rgb(114, 113, 113);
+        border-radius: 15px 15px 0px 0px;
+
+}
+.post-right-mid {
+    height: 200px;
+
+}
+
+.post-right-bottom {
+
+
+}
+
+
+.post-right-button {
+    background-color: transparent;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 10px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    width: 90px;
+    height: 30px;
+    align-content: center;
+    outline: none;
+    font-weight: bolder;
+    background-color: #3897f0;
+}
+
+
+.post-right-button:hover {
+    background-color:  rgb(139, 180, 223);
+    cursor: pointer;
+}

@@ -8,11 +8,13 @@ class PostForm extends React.Component {
         this.state = {
             body: this.props.body,
             photo: this.props.photo,
-            user_id: this.props.user_id
+            user_id: this.props.user_id,
+            fileFound: true
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
     }
 
     handleFile(e) {
@@ -31,14 +33,20 @@ class PostForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('post[body]', this.state.body);
-        formData.append('post[user_id]', this.state.user_id)
         if (this.state.photoFile) {
+            const formData = new FormData();
+            formData.append('post[body]', this.state.body);
+            formData.append('post[user_id]', this.state.user_id)
             formData.append('post[photo]', this.state.photoFile);
-        }
+    
         
         this.props.createPost(formData)
+            .then( (result) => {
+                this.props.history.push(`/posts/${result.post.id}`)
+            })
+        } else {
+            this.setState({fileFound: false})
+        }
     }
 
     update(field) {
@@ -49,13 +57,20 @@ class PostForm extends React.Component {
 
 
     errors() {
-        if (this.props.errors) {
+        // debugger
+        if (!this.state.fileFound) {
             return (
-                this.props.errors.map(error => {
-                    return (<li className="error" key={error}>{error}</li>);
-                })
-            );
+                <li className="no-file">
+                    No file uploaded
+                </li>
+            )
         }
+    }
+
+    handleCancel(e) {
+        e.preventDefault();
+        let path = `/users/${this.props.currentUser.id}`;
+        this.props.history.push(path);
     }
 
     render() {
@@ -64,43 +79,76 @@ class PostForm extends React.Component {
 
         if (this.state.photoUrl) {
             postPreview = 
-                <img 
-                    className="post-pic-preview" 
-                    src={this.state.photoUrl} 
-                />
+                <div className="preview-div">
+                    <img 
+                        className="post-pic-preview" 
+                        src={this.state.photoUrl} 
+                    />
+                </div>
+        } else {
+            postPreview = 
+                <div className="preview-div">
+                    <div className="preview-outline">
+                        <i className="fa fa-camera"></i>
+                    </div>
+                </div>
         }
 
 
         return (
-            <div className="post-detail">
+            <div className="post-form-container">
                 <ul className="login-errors">
                     {this.errors()}
                 </ul>
                 <form className="post-form" onSubmit={this.handleSubmit}>
                     <div className="upload-form-div">
-                        <label className='upload-photo' htmlFor="file-selector">
-                            <input 
-                                className="photo-input-field" 
-                                id="file-selector"
-                                type="file" 
-                                onChange={this.handleFile}  />
-                        </label>
+                        {postPreview}
                     </div>
-                    {postPreview}
-                    <label className='upload-body'>
-                    <textarea
-                        type="text"
-                        value={this.state.body}
-                        placeholder="Write a caption..."
-                        onChange={this.update('body')}
-                    >
-                    </textarea>
-                    </label>
-                    <input 
-                        className="upload-post-submit"
-                        type="submit"
-                        value="Upload Post"
-                    />
+                    <div className="post-form-right">
+                        <div className="post-right-top">
+                            <div className="post-form-author">
+                                {this.props.currentUser.username}
+                            </div>
+                        </div>
+                        <div className="post-right-mid">
+                            <label 
+                                className='upload-photo'     
+                                htmlFor="file-selector">
+                                <div>
+                                    <input 
+                                        className="photo-input-field" 
+                                        id="file-selector"
+                                        type="file" 
+                                        onChange={this.handleFile}  
+                                    />
+                                </div>
+                            </label>
+                            <label className='upload-body'>
+                                <textarea
+                                    type="text"
+                                    value={this.state.body}
+                                    placeholder="Write a caption..."
+                                    onChange={this.update('body')}
+                                >
+                                </textarea>
+                            </label>
+                        </div>
+                        <div className="post-right-bottom">
+                            <div className="post-form-buttons">
+                                <button
+                                    className="post-right-button"
+                                    onClick={this.handleCancel}>
+                                    Cancel
+                                </button>                                
+                                <input 
+                                    className="post-right-button"
+                                    type="submit"
+                                    value="Upload Post"
+                                />
+
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         );

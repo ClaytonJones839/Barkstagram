@@ -17,6 +17,7 @@
     align-items: center;
     /* background-color: #fafafa; */
     font-family: 'Roboto', sans-serif;
+
 }
 
 .post-show-image {
@@ -49,7 +50,14 @@
     justify-content: space-between;
     height: 40px;
     font-weight: bolder;
+    text-decoration: none;
 }
+
+.author-link {
+    text-decoration: none;
+    color: black;
+}
+
 
 .post-comments {
     display: flex;

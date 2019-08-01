@@ -4,12 +4,22 @@ import { Link } from 'react-router-dom';
 class PostShow extends React.Component {
     constructor(props) {
         super(props)
+
+        // this.handleProfilePage = this.handleProfilePage.bind(this)
     }
 
     componentDidMount() {
         // debugger
         this.props.fetchPost(this.props.postId);
     }
+
+    // handleProfilePage(e) {
+    //     e.preventDefault();
+    //     let path = `/users/${this.props.post.user_id}`;
+    //     this.props.history.push(path);
+    // }
+
+
     render() {
         // debugger
 
@@ -35,9 +45,11 @@ class PostShow extends React.Component {
                     />
                     <div className="post-show-detail-box">
                         <div className="post-author">
-                            <span>
+                            <Link 
+                                className="author-link"
+                                to={`/users/${this.props.post.user_id}`}>
                                 {author}
-                            </span>
+                            </Link>
                         </div>
                         {/* <div className="post-body">
 

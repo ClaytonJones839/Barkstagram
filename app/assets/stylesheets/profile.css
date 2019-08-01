@@ -1,12 +1,7 @@
 .post-index, .user-page-photos {
     width: 250px;
     height: 250px;
-    padding: 20px;
-}
-
-.post-pic-preview {
-    width: 325px;
-    height: 325px;
+    margin: 20px;
 }
 
 .profile-top {
@@ -93,4 +88,9 @@
 .cursor:hover {
     cursor: pointer;
 }
+
+.user-page-photos:hover {
+    filter: brightness(0.3);
+}
+
 

@@ -5,10 +5,12 @@ import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state) => {
     let currentUser = state.entities.users[state.session.id]
+    let errors = []
     return ({
         photo: "",
         body: "",
-        // user_id: currentUser.id
+        currentUser,
+        errors
     });
 };
 
