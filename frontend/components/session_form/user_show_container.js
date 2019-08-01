@@ -6,19 +6,17 @@ import UserShow from './user_show';
 
 const mapStateToProps = (state, ownProps) => {
     // let userPage = state.entities.users[ownProps.match.params.userId]
+    const profileId = ownProps.match.params.userId
+    const profileUser = state.entities.users[profileId]
 
     let currentUser = state.entities.users[state.session.id];
     let userPosts = Object.values(state.entities.posts)
-        .filter(post => post.user_id === currentUser.id);
-    // let userPosts = []
-    // if (currentUser.posts) {
-    //     userPosts = Object.values(currentUser.posts)
-    // }
-    // debugger
-    // let allUsers = state.entities.users
+        .filter(post => post.user_id === profileUser.id);
+
     return {
         currentUser,
-        userPosts
+        userPosts,
+        profileUser
     };
 };
 

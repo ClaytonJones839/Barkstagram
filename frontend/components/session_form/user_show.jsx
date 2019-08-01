@@ -19,7 +19,7 @@ class UserShow extends React.Component {
     componentDidMount() {
         // const id = this.props.match.params.userId;
         // this.props.fetchUser(this.props.match.params.userId);
-        this.props.fetchUser(this.currentUser.id);
+        this.props.fetchUser(this.props.match.params.userId);
         this.props.fetchPosts();
     }
 
@@ -31,6 +31,18 @@ class UserShow extends React.Component {
     }
 
     render() {
+        // debugger
+
+        if (!this.props.profileUser) {
+            return (
+                <h2>
+                    fetching page?
+                </h2>
+            )
+        }
+
+
+        const { username } = this.props.profileUser
         let userPhotos = this.props.userPosts.map(post => {
             return(
                 <li key={post.id}>
@@ -51,7 +63,7 @@ class UserShow extends React.Component {
                     </div>
                     <div className="profile-top-right">
                     <div className="profile-top-up" >
-                        <h1>{this.currentUser.username}</h1>
+                        <h1>{username}</h1>
                         <div className="profile-top-buttons">
                             <button 
                                 className="profile-button" 

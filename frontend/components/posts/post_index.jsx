@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 // import PostIndexItem from './post_index_item';
 // import PostFormContainer from './post_form_container';
@@ -19,7 +19,9 @@ class PostIndex extends Component {
                         src={post.photoUrl}
                     />
                     <div className="post-body">
-                        {post.body}
+                        <Link to={`/users/${post.user_id}`}>
+                            {post.author}
+                        </Link>
                     </div>
                 </li>
             )
@@ -28,6 +30,9 @@ class PostIndex extends Component {
 
         return (
             <section className="post-index-container">
+                <Link to={`/users/${this.props.currentUser.id}`}>
+                    My Profile
+                </Link>
                 <ul className="post-ul">
                     {allPosts}
                 </ul>
