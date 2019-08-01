@@ -10,7 +10,7 @@
 }
 
 .post-show-container {
-    margin-top: 125px;
+    /* margin-top: 125px; */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -81,3 +81,21 @@
     flex-direction: column;
     padding-left: 8px;
 }
+
+.post-show-wrapper {
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link-wrap {
+    display: flex;
+    width: 900px;
+    justify-content: flex-end;
+    padding-bottom: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+}
+

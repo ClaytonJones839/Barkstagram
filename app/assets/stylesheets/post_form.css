@@ -106,7 +106,7 @@ textarea {
 }
 
 
-.post-right-button {
+.post-button-cancel, .post-button-upload {
     background-color: transparent;
     color: white;
     font-size: 12px;
@@ -119,11 +119,23 @@ textarea {
     align-content: center;
     outline: none;
     font-weight: bolder;
+
+}
+
+.post-button-upload {
     background-color: #3897f0;
 }
 
+.post-button-cancel {
+    background-color: #f03838;
+}
 
-.post-right-button:hover {
+.post-button-cancel:hover {
+    background-color: rgb(223, 139, 139);
+    cursor: pointer;
+}
+
+.post-button-upload:hover {
     background-color:  rgb(139, 180, 223);
     cursor: pointer;
 }

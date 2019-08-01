@@ -35,7 +35,14 @@ class PostShow extends React.Component {
         const { photoUrl, author, body } = this.props.post;
         return (
 
-
+        <div className="post-show-wrapper">
+            <div className="link-wrap">
+            <Link
+                className="author-link"
+                to={`/users/${this.props.post.user_id}`}>
+                Back to Profile
+            </Link>
+            </div>
         <section className="post-show-page">
             <div className="post-show-container">
                 <div className="post-box">
@@ -82,6 +89,7 @@ class PostShow extends React.Component {
                 </div>
             </div>
         </section>
+        </div>
         );
     }
 }
