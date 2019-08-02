@@ -6,7 +6,7 @@
 
 .profile-top {
     display: flex;
-    width: 700px;
+    width: 800px;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
@@ -81,7 +81,7 @@
 
 
 .profile-top-right {
-    width: 500px;
+    width: 700px;
 }
 
 .cursor:hover {
