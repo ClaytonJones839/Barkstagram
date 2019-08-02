@@ -14,15 +14,22 @@ class PostIndex extends Component {
     render() {
         let allPosts = this.props.posts.map(post => {
             return(
-                <li key={post.id }>
+                <li className="feed-image-box" key={post.id }>
+                    <div className="feed-image-header">
+                        <div className="feed-image-header-wrap">
+                        <img className="feed-profile-pic"
+                            src=""
+                        />
+                        <Link 
+                            className="profile-link" 
+                            to={`/users/${post.user_id}`}>
+                                {post.author}
+                        </Link>
+                        </div>
                     <img 
-                        className="post-index"
+                        className="feed-image"
                         src={post.photoUrl}
                     />
-                    <div className="post-body">
-                        <Link to={`/users/${post.user_id}`}>
-                            {post.author}
-                        </Link>
                     </div>
                 </li>
             )
@@ -32,13 +39,16 @@ class PostIndex extends Component {
         return (
             <div>
                 <NavBarContainer />
-            <section className="post-index-container">
-                <Link to={`/users/${this.props.currentUser.id}`}>
-                    My Profile
-                </Link>
-                <ul className="post-ul">
-                    {allPosts}
-                </ul>
+            <section className="feed-container">
+                <div className="feed-left">
+                </div>
+                <div className="feed-mid">
+                    <ul className="feed-images">
+                        {allPosts}
+                    </ul>
+                </div>
+                <div className="feed-right">
+                </div>
             </section>
             </div>
         );
