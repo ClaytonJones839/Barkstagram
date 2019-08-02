@@ -17,9 +17,12 @@ class PostIndex extends Component {
                 <li className="feed-image-box" key={post.id }>
                     <div className="feed-image-header">
                         <div className="feed-image-header-wrap">
+                        <Link 
+                            to={`/users/${post.user_id}`}>
                         <img className="feed-profile-pic"
                             src={post.authorPhotoUrl}
                         />
+                        </Link>
                         <Link 
                             className="profile-link" 
                             to={`/users/${post.user_id}`}>
