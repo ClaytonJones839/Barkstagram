@@ -7,6 +7,7 @@ import PostIndexContainer from './posts/post_index_container'
 import PostShowContainer from './posts/post_show_container'
 import PostFormContainer from './posts/post_form_container'
 import UserShowContainer from './session_form/user_show_container'
+import UserUpdateFormContainer from './session_form/user_update_form_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -23,6 +24,7 @@ const App = () => (
                 <ProtectedRoute exact path="/" component={PostIndexContainer} />
                 <ProtectedRoute path="/posts" component={PostIndexContainer} />
                 <ProtectedRoute path="/new-post" component={PostFormContainer} />
+                <ProtectedRoute path="/edit-profile" component={UserUpdateFormContainer} />
                 
             </Switch>
     </div>

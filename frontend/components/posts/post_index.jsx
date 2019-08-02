@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
+import NavBarContainer from '../nav_bar/nav_bar_container'
 
 // import PostIndexItem from './post_index_item';
 // import PostFormContainer from './post_form_container';
@@ -29,6 +30,8 @@ class PostIndex extends Component {
 
 
         return (
+            <div>
+                <NavBarContainer />
             <section className="post-index-container">
                 <Link to={`/users/${this.props.currentUser.id}`}>
                     My Profile
@@ -37,6 +40,7 @@ class PostIndex extends Component {
                     {allPosts}
                 </ul>
             </section>
+            </div>
         );
     }
 }

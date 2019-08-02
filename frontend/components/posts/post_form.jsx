@@ -1,6 +1,8 @@
 import React from 'react';
+import NavBarContainer from '../nav_bar/nav_bar_container'
 
 import { withRouter } from 'react-router-dom';
+import NavBar from '../nav_bar/nav_bar';
 
 class PostForm extends React.Component {
     constructor(props) {
@@ -96,6 +98,8 @@ class PostForm extends React.Component {
 
 
         return (
+            <div>
+                <NavBarContainer />
             <div className="post-form-container">
                 <ul className="login-errors">
                     {this.errors()}
@@ -150,6 +154,7 @@ class PostForm extends React.Component {
                         </div>
                     </div>
                 </form>
+            </div>
             </div>
         );
     }

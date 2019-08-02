@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import PostFormContainer from '../posts/post_form_container'
+import NavBarContainer from '../nav_bar/nav_bar_container'
 
 class UserShow extends React.Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class UserShow extends React.Component {
             this.currentUser = this.props.currentUser;
             this.logout = this.props.logout
             this.handleNewPostForm = this.handleNewPostForm.bind(this)
+            this.handleEditUser = this.handleEditUser.bind(this)
             // this.userPage = null;
             
             // if (this.props.allUsers[this.props.match.params.userId]) {
@@ -27,6 +29,12 @@ class UserShow extends React.Component {
     handleNewPostForm(e) {
         e.preventDefault();
         let path = `/new-post`;
+        this.props.history.push(path);
+    }
+
+    handleEditUser(e) {
+        e.preventDefault();
+        let path = `/edit-profile`;
         this.props.history.push(path);
     }
 
@@ -56,7 +64,10 @@ class UserShow extends React.Component {
             )
         })
         return (
+            <div>
+                <NavBarContainer />
             <div className="profile-container">
+
                 <div className="profile-top">
                     <div className="profile-display-pic">
                         <img 
@@ -72,6 +83,11 @@ class UserShow extends React.Component {
                                 className="profile-button" 
                                 onClick={this.logout}>
                                 Log Out
+                            </button>
+                            <button
+                                className="profile-button"
+                                onClick={this.handleEditUser}>
+                                Edit Profile
                             </button>
                             <button 
                                 className="profile-button" 
@@ -92,6 +108,7 @@ class UserShow extends React.Component {
                             {userPhotos}
                         </ul>
                     </div>
+            </div>
             </div>
         );
     }

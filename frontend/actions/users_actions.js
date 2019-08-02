@@ -33,9 +33,9 @@ export const fetchUser = userId => dispatch => {
         });
 };
 
-export const updateUser = user => dispatch => {
-    return UserAPIUtil.updatePost(user).
-        then(user => {
-            return dispatch(receiveUser(user))
-        });
-};
+export const updateUser = user => dispatch => (
+    UserApiUtil.updateUser(user).then(user => (
+        dispatch(receiveUser(user))
+    ))
+);
+
