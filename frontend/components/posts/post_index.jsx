@@ -18,7 +18,7 @@ class PostIndex extends Component {
                     <div className="feed-image-header">
                         <div className="feed-image-header-wrap">
                         <img className="feed-profile-pic"
-                            src=""
+                            src={post.authorPhotoUrl}
                         />
                         <Link 
                             className="profile-link" 
