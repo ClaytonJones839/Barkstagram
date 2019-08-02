@@ -8,8 +8,8 @@
 
 .profile-top {
     display: flex;
-    width: 70%;
-    min-width: 740px;
+    /* width: 70%; */
+    min-width: 850px;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
@@ -23,6 +23,7 @@
     align-items: center;
     background-color: #fafafa;
     font-family: 'Roboto', sans-serif;
+    width: 950px;
 }
 
 .post-ul, .profile-photo-index {
@@ -32,18 +33,20 @@
     /* justify-content: center; */
     /* flex-direction: column; */
     align-items: center;
-    width: 80%;
+    /* width: 80%; */
     list-style: none;
-    padding-left: 10%;
+    padding-left: 0;
 }
 
 .profile-photo-index-container {
     display: flex;
     flex-wrap: wrap;
     /* justify-content: flex-start; */
-    justify-content: center;
+    /* justify-content: center; */
     /* flex-direction: column; */
     align-items: center;
+    min-width: 900px;
+    padding-left: 20px;
 
 }
 
@@ -52,6 +55,11 @@
     justify-content: space-between;
 }
 
+.profile-container {
+    display: flex;
+    align-items: center;
+        justify-content: center;
+}
 
 .profile-button {
     background-color: transparent;
@@ -109,4 +117,14 @@
     filter: brightness(0.3);
 }
 
+.profile-left, .profile-right {
+    width: 10%
+}
+
+.profile-wrap {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    align-items: center;
+}
 

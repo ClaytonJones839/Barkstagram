@@ -31,8 +31,10 @@ class NavBar extends React.Component {
         <section className="nav-bar-container">
             <div className="nav-left">
                 <div className="nav-left-index">
-                    <Link to={`/posts`}>
-                        feed
+                    <Link 
+                        className="nav-icon"
+                        to={`/posts`}>
+                        <i className='fas fa-camera'></i>
                     </Link>
                     {/* <button
                         className="profile-button"
@@ -53,8 +55,10 @@ class NavBar extends React.Component {
             </div>
             <div className="nav-right">
                 <div className="nav-right-index">
-                    <Link to={`/posts`}>
-                        feed
+                    <Link 
+                        className="nav-icon"
+                        to={`/posts`}>
+                        <i className='far fa-compass'></i>
                     </Link>
                     {/* <button
                         className="profile-button"
@@ -62,9 +66,11 @@ class NavBar extends React.Component {
                         index
                     </button> */}
                 </div>
-                <div className="nav-link-profile">
-                    <Link to={`/users/${this.props.currentUser.id}`}>
-                        profile
+                <div className="nav-right-profile">
+                    <Link 
+                        className="nav-icon"
+                        to={`/users/${this.props.currentUser.id}`}>
+                        <i className='fas fa-dog'></i>
                     </Link>
                     {/* <button
                         className="profile-button"

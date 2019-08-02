@@ -67,6 +67,8 @@ class UserShow extends React.Component {
         return (
             <div>
                 <NavBarContainer />
+                <div className="profile-wrap">
+            <div className="profile-left"></div>
             <div className="profile-container">
 
                 <div className="profile-top">
@@ -110,6 +112,8 @@ class UserShow extends React.Component {
                         </ul>
                     </div>
             </div>
+            <div className="profile-right"></div>
+                </div>
             </div>
         );
     }
