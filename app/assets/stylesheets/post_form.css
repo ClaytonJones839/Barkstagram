@@ -55,7 +55,7 @@
     border-radius: 15px;
 }
 
-textarea {
+.post-form-body {
     height: 75px;
     max-height: 75px;
     max-width: 250px;

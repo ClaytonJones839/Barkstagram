@@ -72,3 +72,8 @@
     color: black;
     font-size: 32px;
 }
+
+.update-profile-pic {
+    display: flex;
+}
+

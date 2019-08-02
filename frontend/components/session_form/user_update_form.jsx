@@ -47,7 +47,7 @@ class UserUpdateForm extends React.Component {
         if (this.state.photoFile) {
             formData.append('user[photo]', this.state.photoFile);
         }
-        debugger
+        // debugger
         this.props.updateUser(formData, this.props.userId )
             .then((result) => {
                 this.props.history.push(`/users/${result.user.id}`)
@@ -72,11 +72,16 @@ class UserUpdateForm extends React.Component {
     render() {
 
         let postPreview = 
-            <div className="preview-div">
-                <img
-                    className="post-pic-preview"
-                    src={this.state.photoUrl}
-                />
+            <div className="preview-div update-preview">
+                <div className="update-left-top">
+                    Profile Picture
+                </div>
+                <div className="profile-pic-main">
+                    <img
+                        className="post-pic-preview"
+                        src={this.state.photoUrl}
+                    />
+                </div>
             </div>
 
 
@@ -88,63 +93,80 @@ class UserUpdateForm extends React.Component {
                 <ul className="login-errors">
                     {/* {this.errors()} */}
                 </ul>
+
                 <form className="post-form" onSubmit={this.handleSubmit}>
                     <div className="upload-form-div">
                         {postPreview}
                     </div>
-                    <div className="post-form-right">
-                        <div className="post-right-top">
-                            <div className="post-form-author">
+                    <div className="update-form-right">
+                        <div className="update-right-top">
+                            <div>
                                 {this.props.currentUser.username}
                             </div>
                         </div>
-                        <div className="post-right-mid">
+                        <div className="update-right-mid">
+                            <div className="update-profile-pic">
                             <label
                                 className='upload-photo'
                                 htmlFor="file-selector">
-                                <div>
-                                Update Profile Picture
+                                <div className="update-profile-text">
+                                    Update Profile Picture:
+                                </div>
                                     <input
-                                        className="photo-input-field"
+                                        className="photo-input-field int"
                                         id="file-selector"
                                         type="file"
                                         onChange={this.handleFile}
                                     />
-                                </div>
                             </label>
-                            <label className='upload-body'>
+                            </div>
+                            <label className='update-email'>
+                                <div className="update-profile-text">
+                                    Update Email:
+                                </div>
                                 <input
                                     type="text"
-                                    value={this.state.email}
-                                    // placeholder="Write a caption..."
+                                    className="update-text-input int"
+                                    // value={this.state.email}
+                                    placeholder={this.state.email}
                                     onChange={this.update('email')}
                                 />
+                                </label>
+                                <label className="update-username">
+                                <div className="update-profile-text">
+                                        Update Username:
+                                </div>
                                 <input
                                     type="text"
-                                    value={this.state.username}
+                                    className="update-text-input int"
+                                    placeholder={this.state.username}
                                     // placeholder="Write a caption..."
                                     onChange={this.update('username')}
                                 />
                             </label>
-                            <label className='upload-body'>
+                            <label className='update-bio'>
+                                <div className="update-profile-text">
+                                    Update Bio:
+                                </div>
                                 <textarea
                                     type="text"
-                                    value={this.state.bio}
-                                    // placeholder="Write a caption..."
+                                    className="update-bio-text int"
+                                    // value={this.state.bio}
+                                    placeholder={this.state.bio}
                                     onChange={this.update('bio')}
                                 >
                                 </textarea>
                             </label>
                         </div>
-                        <div className="post-right-bottom">
+                        <div className="update-right-bottom">
                             <div className="post-form-buttons">
                                 <button
-                                    className="post-button-cancel"
+                                    className="post-button-cancel update-cancel"
                                     onClick={this.handleCancel}>
                                     Cancel
                                 </button>
                                 <input
-                                    className="post-button-upload"
+                                    className="post-button-upload update-submit"
                                     type="submit"
                                     value="Update Profile"
                                 />

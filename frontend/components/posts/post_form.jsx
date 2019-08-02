@@ -129,6 +129,7 @@ class PostForm extends React.Component {
                             </label>
                             <label className='upload-body'>
                                 <textarea
+                                    className="post-form-body"
                                     type="text"
                                     value={this.state.body}
                                     placeholder="Write a caption..."
