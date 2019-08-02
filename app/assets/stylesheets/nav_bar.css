@@ -9,6 +9,7 @@
     right: 0;
     border-bottom: 1px solid lightgrey;
     min-width: 815px;
+    z-index: 1;
 }
 
 .nav-left {
