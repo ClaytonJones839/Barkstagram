@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 //Components
 import Root from './components/root';
 import configureStore from './store/store';
+import Modal from 'react-modal';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,5 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.getState = store.getState;
     const root = document.getElementById('root');
+    Modal.setAppElement(root)
     ReactDOM.render(<Root store={store} />, root);
 });
