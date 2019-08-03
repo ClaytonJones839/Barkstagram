@@ -61,13 +61,15 @@ class SessionForm extends React.Component {
                 </div>
             </div>
             <div className="login-page-right">
-                    {this.renderErrors()}
+
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <h1 className="login-logo">
                         Barkstagram
                     </h1>
-
+                    <div className="login-errors-ul">
+                        {this.renderErrors()}
+                    </div>
                     <div className="login-form">
                     <br/>
                         <label>

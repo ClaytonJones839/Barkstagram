@@ -7,7 +7,9 @@ class SignUpForm extends React.Component {
         this.state = {
             username: '',
             password: '',
-            email: ''
+            email: '',
+            dupEmail: '',
+            dupUsername: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -16,8 +18,15 @@ class SignUpForm extends React.Component {
         this.props.clearErrors();
     }
 
+
     update(field) {
+        // let setField;
+        // if (e.currentTarget.value === this.state.dupUsername) {
+        //     setField
+        // }
+
         return e => this.setState({
+
             [field]: e.currentTarget.value
         });
     }
@@ -28,19 +37,145 @@ class SignUpForm extends React.Component {
         this.props.processForm(user);
     }
 
-    renderErrors() {
+    // renderErrors() {
+    //     return (
+    //         <ul className="login-errors">
+    //             {this.props.errors.map((error, i) => (
+    //                 <li key={`error-${i}`}>
+    //                     {error}
+    //                 </li>
+    //             ))}
+    //         </ul>
+    //     );
+    // }
+
+    renderUniqueErrors() {
+        let unqiueErrors = [];
+
+        if (this.props.errors.includes("Username has already been taken")) {
+            unqiueErrors.push("Username has already been taken")
+        } 
+        if (this.props.errors.includes("Email has already been taken")) {
+            unqiueErrors.push("Email has already been taken")
+        } 
+
+        if (unqiueErrors) {
         return (
             <ul className="login-errors">
-                {this.props.errors.map((error, i) => (
+                {unqiueErrors.map((error, i) => (
                     <li key={`error-${i}`}>
                         {error}
                     </li>
                 ))}
             </ul>
-        );
+        )};
     }
 
+
+
+
+    renderUserNameError() {
+        // debugger
+        if (this.props.errors.includes("Username can't be blank")) {
+            return (
+                <input type="text"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    className="signin-error"
+                    placeholder="Username is required"
+                />
+            )
+        } else if (this.props.errors.includes("Username has already been taken")) {
+            return (
+                <input type="text"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    className="signin-error"
+                    placeholder="Username has already been taken"
+                />
+            )
+        } else {
+            return (
+                <input type="text"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    className="login-input"
+                    placeholder="Username"
+                />
+            )
+        }
+    }
+
+
+
+
+    renderEmailError() {
+        // debugger
+        if (this.props.errors.includes("Email can't be blank")) {
+            return (
+                <input type="text"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                    className="signin-error"
+                    placeholder="Email is required"
+                />
+            )
+        } else if (this.props.errors.includes("Email has already been taken")) {
+            return (
+                <input type="text"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                    className="signin-error"
+                    placeholder="Email has already been taken"
+                />
+            )
+        } else {
+            return (
+            <input type="text"
+                value={this.state.email}
+                onChange={this.update('email')}
+                className="login-input"
+                placeholder="Email"
+            />
+        )}
+    }
+
+    renderPasswordError() {
+        // debugger
+        if (this.props.errors.includes("Password is too short (minimum is 6 characters)")) {
+            return (
+                <input type="text"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    className="signin-error"
+                    placeholder="Password minimum 6 characters"
+                />
+            )
+        } else {
+            return (
+                <input type="password"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    className="login-input"
+                    placeholder="Password"
+                />
+            )
+        }
+    }
+
+
+
     render() {
+
+        // signupUserInput
+        // <input type="text"
+        //     value={this.state.username}
+        //     onChange={this.update('username')}
+        //     className="login-input"
+        //     placeholder="Username"
+        // />
+
+
         return (
                 <div className="signup-page">
                 <div className="login-page-left">
@@ -50,8 +185,8 @@ class SignUpForm extends React.Component {
                         <img className="login-left-image-inner-2" src="https://scontent-mia3-2.xx.fbcdn.net/v/t1.0-9/66584318_10216687664477948_8152920814933508096_n.jpg?_nc_cat=102&_nc_oc=AQnEPH6-7NxFpkyMnw_BXmTU2rzKrFZBSczf4Z-Hoi6Nvnke87caQJHW3OFvd9LIcAI&_nc_ht=scontent-mia3-2.xx&oh=9be3dd7aeb2785cfde4691c9b4f0d4b2&oe=5DAA76BD" />
                     </div>
                 </div>
-                <div className="login-page-right">
-                    {this.renderErrors()}
+                <div className="signin-page-right">
+
                     <form onSubmit={this.handleSubmit} className="signup-form-box">
                         <h1 className="login-logo">
                             Barkstagram
@@ -60,32 +195,31 @@ class SignUpForm extends React.Component {
                             <span className="form-header">
                                 Sign up to see photos and videos from your friends.
                             </span>
-                            <br />
+                            <div className="signin-errors-ul">
+                            {this.renderUniqueErrors()}
+                            </div>
                             <label>
-                                <input type="text"
+                                {this.renderEmailError()}
+                                {/* <input type="text"
                                     value={this.state.email}
                                     onChange={this.update('email')}
                                     className="login-input"
                                     placeholder="Email"
-                                />
+                                /> */}
                             </label>                            
                             <br />
                             <label>
-                                <input type="text"
-                                    value={this.state.username}
-                                    onChange={this.update('username')}
-                                    className="login-input"
-                                    placeholder="Username"
-                                />
+                                {this.renderUserNameError()}
                             </label>
                             <br />
                             <label>
-                                <input type="password"
+                                {this.renderPasswordError()}                                
+                                {/* <input type="password"
                                     value={this.state.password}
                                     onChange={this.update('password')}
                                     className="login-input"
                                     placeholder="Password"
-                                />
+                                /> */}
                             </label>
                             <br />
                             <input
