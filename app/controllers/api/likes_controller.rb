@@ -1,5 +1,8 @@
 class Api::LikesController < ApplicationController
 
+    def show
+    end
+
     def create 
         @like = Like.new(like_params)
         @like.user_id = current_user.id 
