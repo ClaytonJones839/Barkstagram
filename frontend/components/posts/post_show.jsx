@@ -5,13 +5,20 @@ import NavBarContainer from '../nav_bar/nav_bar_container'
 class PostShow extends React.Component {
     constructor(props) {
         super(props)
-
+        this.handleLike = this.handleLike.bind(this)
         // this.handleProfilePage = this.handleProfilePage.bind(this)
     }
 
     componentDidMount() {
         // debugger
-        this.props.fetchPost(this.props.postId);
+        this.props.fetchPost(this.props.postId)
+    }
+
+    componentDidUpdate(prevProps) {
+        debugger
+        if (prevProps.post && prevProps.post.like_count !== this.props.post.like_count) {
+            this.props.fetchPost(this.props.postId)
+        }
     }
 
     // handleProfilePage(e) {
@@ -20,6 +27,12 @@ class PostShow extends React.Component {
     //     this.props.history.push(path);
     // }
 
+    handleLike(e) {
+        e.preventDefault();
+
+        this.props.createLike({post_id: this.props.postId})
+            .then(this.props.fetchPost(this.props.postId))
+    }
 
     render() {
         // debugger
@@ -33,7 +46,7 @@ class PostShow extends React.Component {
             )
         }
 
-        const { photoUrl, author, body, like_count } = this.props.post;
+        const { photoUrl, author, body, like_count, id } = this.props.post;
         return (
         <div>
             <NavBarContainer />
@@ -77,7 +90,9 @@ class PostShow extends React.Component {
                             </span>
                         </div>
                         <div className="post-show-buttons">
-                            
+                            <button onClick={this.handleLike}>
+                                33
+                            </button>
                             <span>
                                 Comment button coming soon
                             </span>

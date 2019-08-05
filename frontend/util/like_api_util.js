@@ -5,10 +5,11 @@ export const fetchLike = id => {
     });
 };
 
-export const createLike = post_id => {
+export const createLike = like => {
     return $.ajax({
         method: "POST",
-        url: `api/likes`
+        url: `api/likes`,
+        data: { like }
     });
 };
 
