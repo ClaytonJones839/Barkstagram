@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container'
+import LikesContainer from './post_likes_container'
 
 class PostShow extends React.Component {
     constructor(props) {
         super(props)
-        this.handleLike = this.handleLike.bind(this)
+        // this.handleLike = this.handleLike.bind(this)
         // this.handleProfilePage = this.handleProfilePage.bind(this)
     }
 
@@ -15,11 +16,12 @@ class PostShow extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        debugger
+        // debugger
         if (prevProps.post && prevProps.post.like_count !== this.props.post.like_count) {
             this.props.fetchPost(this.props.postId)
         }
     }
+
 
     // handleProfilePage(e) {
     //     e.preventDefault();
@@ -27,12 +29,17 @@ class PostShow extends React.Component {
     //     this.props.history.push(path);
     // }
 
-    handleLike(e) {
-        e.preventDefault();
-
-        this.props.createLike({post_id: this.props.postId})
-            .then(this.props.fetchPost(this.props.postId))
-    }
+    // handleLike(e) {
+    //     // debugger
+    //     e.preventDefault();
+    //     if (!this.props.post.likers.includes(this.props.currentUser.id)) {
+    //         this.props.createLike({post_id: this.props.postId})
+    //             .then(this.props.fetchPost(this.props.postId))
+    //     } else {
+    //         this.props.deleteLike(this.props.post.id)
+    //             .then(this.props.fetchPost(this.props.postId))
+    //     }
+    // }
 
     render() {
         // debugger
@@ -46,7 +53,11 @@ class PostShow extends React.Component {
             )
         }
 
-        const { photoUrl, author, body, like_count, id } = this.props.post;
+        const { photoUrl, author, body, like_count, likers, id } = this.props.post;
+
+        const likedStatus = 
+            this.props.post.likers.includes(this.props.currentUser.id);
+
         return (
         <div>
             <NavBarContainer />
@@ -85,14 +96,23 @@ class PostShow extends React.Component {
                             </span>
                         </div>
                         <div className="post-show-likes">
-                            <span>
+                            {/* <span>
                                 {like_count} likes
                             </span>
                         </div>
                         <div className="post-show-buttons">
                             <button onClick={this.handleLike}>
                                 33
-                            </button>
+                            </button> */}
+                            <LikesContainer 
+                                // like_count={like_count} 
+                                post={this.props.post}
+                                likers={likers}
+                                likeStatus={likedStatus}
+                                // currentUserId={this.props.currentUser.id}
+                                // createLike={this.props.createLike}
+                                // deleteLike={this.props.deleteLike}/>
+                                />
                             <span>
                                 Comment button coming soon
                             </span>
