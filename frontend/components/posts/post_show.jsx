@@ -33,7 +33,7 @@ class PostShow extends React.Component {
             )
         }
 
-        const { photoUrl, author, body } = this.props.post;
+        const { photoUrl, author, body, like_count } = this.props.post;
         return (
         <div>
             <NavBarContainer />
@@ -73,13 +73,11 @@ class PostShow extends React.Component {
                         </div>
                         <div className="post-show-likes">
                             <span>
-                                Liked by ###
+                                {like_count} likes
                             </span>
                         </div>
                         <div className="post-show-buttons">
-                            <span>
-                                Like button coming soon
-                            </span>
+                            
                             <span>
                                 Comment button coming soon
                             </span>

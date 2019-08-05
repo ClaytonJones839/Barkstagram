@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchPost, deletePost } from '../../actions/posts_actions';
+import { createPost, destroyPost } from '../../actions/posts_actions';
 import PostShow from './post_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -15,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
             
 const mapDispatchToProps = dispatch => {
     return({
+
         fetchPost: id => dispatch(fetchPost(id)),
         deletePost: id => dispatch(deletePost(id))
     })

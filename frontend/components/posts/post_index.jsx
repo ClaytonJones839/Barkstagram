@@ -29,10 +29,12 @@ class PostIndex extends Component {
                                 {post.author}
                         </Link>
                         </div>
-                    <img 
-                        className="feed-image"
-                        src={post.photoUrl}
-                    />
+                    <Link to={`/posts/${post.id}`}>
+                        <img 
+                            className="feed-image"
+                            src={post.photoUrl}
+                        />
+                    </Link>
                     </div>
                 </li>
             )
