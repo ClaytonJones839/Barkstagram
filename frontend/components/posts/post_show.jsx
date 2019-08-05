@@ -15,14 +15,13 @@ class PostShow extends React.Component {
         this.props.fetchPost(this.props.postId)
     }
 
-    componentDidUpdate(prevProps) {
-        // debugger
-        if (prevProps.post && prevProps.post.like_count !== this.props.post.like_count) {
-            this.props.fetchPost(this.props.postId)
-        }
-    }
-
-
+    // componentDidUpdate(prevProps) {
+    //     // debugger
+    //     if (this.props.post !== prevProps.post) {
+    //         this.props.fetchPost(this.props.post.id);
+    //     }
+    // }
+    // }
     // handleProfilePage(e) {
     //     e.preventDefault();
     //     let path = `/users/${this.props.post.user_id}`;

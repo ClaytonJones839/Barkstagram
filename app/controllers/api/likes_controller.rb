@@ -11,7 +11,7 @@ class Api::LikesController < ApplicationController
         if @like.save
             render :show
         else
-            render json @like.errors_full_messages, status: 422
+            render json: @like.errors.full_messages, status: 422
         end
     end
 

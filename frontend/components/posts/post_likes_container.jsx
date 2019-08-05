@@ -2,12 +2,14 @@ import { connect } from 'react-redux';
 import { createLike, deleteLike } from '../../actions/likes_actions';
 import Likes from './post_likes';
 import { create } from 'domain';
+import { fetchPost } from '../../actions/posts_actions';
 
 const mapStateToProps = (state, ownProps) => {
     // debugger
     const currentUser = state.entities.users[state.session.id];
     const post = ownProps.post
     const likers = ownProps.likers
+    const likedStatus = ownProps.likedStatus
 
 
     // const likers = post.likers
@@ -16,7 +18,8 @@ const mapStateToProps = (state, ownProps) => {
     return ({
         currentUser,
         likers,
-        post
+        post,
+        likedStatus
         // postId
     })
 };
@@ -24,7 +27,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return ({
         createLike: like => dispatch(createLike(like)),
-        deleteLike: id => dispatch(deleteLike(id))
+        deleteLike: id => dispatch(deleteLike(id)),
+        fetchPost: id => dispatch(fetchPost(id))
     })
 }
 
