@@ -101,17 +101,15 @@
     align-items: center;
 }
 
-.bark-button {
-    width: 35px;
-    height: 35px;
+.show-icon {
     padding-left: 8px;
     padding-right: 5px;
     color: black;
-    font-size: 26px;
-    transform: scale(1.1, 1);
+    font-size: 28px;
+    /* transform: scale(1, 1); */
 }
 
-.bark-button:hover, .delete-comment-button:hover {
+.bark-button:hover, .show-icon:hover {
     cursor: pointer;
 }
 

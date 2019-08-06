@@ -126,10 +126,10 @@ class PostShow extends React.Component {
                                                 post={this.props.post}
                                                 likers={likers}
                                             />
-                                            <img 
-                                                className="bark-button"
-                                                onClick={this.handleComment}
-                                                src="http://cdn.onlinewebfonts.com/svg/img_74304.png"/>
+                                            <i 
+                                                className='far fa-comment show-icon'
+                                                onClick={this.handleComment}>
+                                            </i>
                                         </div>
                                         <div className="show-likecount">
                                             {like_count === 1 ? (
