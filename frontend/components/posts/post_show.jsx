@@ -102,9 +102,9 @@ class PostShow extends React.Component {
                                     </Link>
                                 </div>
                                 <div className="post-comments">
-                                    <span className="post-bio">
+                                    <span>
                                         {body ? (
-                                            <div>
+                                            <div className="post-bio">
                                                 <Link
                                                     className="profile-link"
                                                     to={`/users/${this.props.post.user_id}`}>

@@ -54,11 +54,12 @@
 
 
 .post-comments {
-    height: 400px;
+    height: 320px;
     border-top: 1px solid lightgrey;
     border-bottom: 1px solid lightgrey;
     padding-left: 8px;
     padding-top: 8px;
+    overflow: auto;
 }
 .post-show-likes {
     padding-top: 8px;
@@ -88,5 +89,9 @@
     padding-bottom: 3px;
     font-family: 'Roboto', sans-serif;
     font-weight: bolder;
+}
+
+.post-bio {
+    margin-bottom: 10px;
 }
 
