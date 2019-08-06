@@ -37,18 +37,6 @@ class SignUpForm extends React.Component {
         this.props.processForm(user);
     }
 
-    // renderErrors() {
-    //     return (
-    //         <ul className="login-errors">
-    //             {this.props.errors.map((error, i) => (
-    //                 <li key={`error-${i}`}>
-    //                     {error}
-    //                 </li>
-    //             ))}
-    //         </ul>
-    //     );
-    // }
-
     renderUniqueErrors() {
         let unqiueErrors = [];
 
@@ -70,9 +58,6 @@ class SignUpForm extends React.Component {
             </ul>
         )};
     }
-
-
-
 
     renderUserNameError() {
         // debugger
@@ -106,9 +91,6 @@ class SignUpForm extends React.Component {
         }
     }
 
-
-
-
     renderEmailError() {
         // debugger
         if (this.props.errors.includes("Email can't be blank")) {
@@ -141,7 +123,6 @@ class SignUpForm extends React.Component {
     }
 
     renderPasswordError() {
-        // debugger
         if (this.props.errors.includes("Password is too short (minimum is 6 characters)")) {
             return (
                 <input type="text"
@@ -166,15 +147,6 @@ class SignUpForm extends React.Component {
 
 
     render() {
-
-        // signupUserInput
-        // <input type="text"
-        //     value={this.state.username}
-        //     onChange={this.update('username')}
-        //     className="login-input"
-        //     placeholder="Username"
-        // />
-
 
         return (
                 <div className="signup-page">

@@ -97,4 +97,19 @@
 
 .show-buttons {
     display: flex;
+    align-items: center;
+}
+
+.bark-button {
+    width: 35px;
+    height: 35px;
+    padding-left: 8px;
+    padding-right: 5px;
+    color: black;
+    font-size: 26px;
+    transform: scale(1.1, 1);
+}
+
+.bark-button:hover {
+    cursor: pointer;
 }

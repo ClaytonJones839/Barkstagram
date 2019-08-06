@@ -9,9 +9,8 @@
     padding-left: 8px;
     padding-right: 5px;
     color: black;
-    font-size: 26px;
-    transform: scale(1.1, 1);
-
+    font-size: 36px;
+    transform: scale(1.2, 1);
 }
 
 .like-button:hover {
