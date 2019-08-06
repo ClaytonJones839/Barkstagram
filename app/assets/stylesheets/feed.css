@@ -98,3 +98,7 @@
 .feed-image-bottom-likes, .feed-image-bottom-bio {
     padding-left: 9px;
 }
+
+.feed-comment-form {
+    display: flex;
+}

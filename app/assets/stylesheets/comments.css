@@ -10,16 +10,21 @@
     text-align: left;
     resize: none;
     font-size: 12px;
+    padding-left: 8px;
 }
 
 .feed-image-comment-input {
+    padding-top: 5px;
     padding-left: 0px;
     border-top: 1px solid lightgray;
     width: 490px;
 }
 
 .feed-image-bottom-comments {
-    overflow: auto;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    width: 480px;
+    padding-left: 8px;
 }
 
 .show-textarea {
