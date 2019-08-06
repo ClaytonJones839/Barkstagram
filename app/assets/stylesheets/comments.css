@@ -23,20 +23,18 @@
     /* border-top: 1px solid lightgrey; */
     margin: 0px;
     width: 240px;
-    height: 40px;
+    max-height: 400px;
     outline: none;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    flex-direction: column;
-    text-align: left;
     resize: none;
-    font-size: 12px;
+    font-size: 14px;
     padding-left: 8px;
+    padding-top: 5px;
+    overflow: auto;
 }
 
 .show-comment-form {
     display: flex;
+    align-items: flex-start
 }
 
 .submit-comment-button {
@@ -47,6 +45,7 @@
     font-size: 16px;
     font-weight: bold;
     color: #3897f0;
+    padding-top: 5px;
 }
 
 .show-comment-container {

@@ -127,7 +127,7 @@ class PostShow extends React.Component {
                                                 likers={likers}
                                             />
                                             <i 
-                                                className='far fa-comment show-icon'
+                                                className='fas fa-paw show-icon'
                                                 onClick={this.handleComment}>
                                             </i>
                                         </div>
