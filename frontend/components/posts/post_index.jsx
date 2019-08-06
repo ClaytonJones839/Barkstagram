@@ -68,6 +68,11 @@ class PostIndex extends Component {
                         <div className="feed-image-bottom-comments">
                             comments coming soon..
                         </div>
+                        <div className="feed-image-comment-input">
+                            <textarea className="feed-textarea" placeholder="Add a comment...">
+                                
+                            </textarea>
+                        </div>
                     </div>
                     </div>
                 </li>
