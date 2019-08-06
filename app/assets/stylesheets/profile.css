@@ -162,7 +162,8 @@
 
 .image-overlay-text {
     display: flex;
-    justify-content: center;
+    width: 40%;
+    justify-content: space-between;
     align-items: center;
     color: white;
     font-size: 20px;
@@ -174,7 +175,6 @@
 }
 
 .overlay-heart {
-    padding-right: 10px;
     color: white;
     font-size: 22px;
     transform: scale(1.2, 1);

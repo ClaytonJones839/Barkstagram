@@ -56,7 +56,10 @@ class UserShow extends React.Component {
                             />
                             <div className="image-overlay">
                                 <p className="image-overlay-text">
-                                    <span className="overlay-heart">&#9829;</span>{post.like_count}
+                                    <span className="overlay-heart">&#9829;</span>
+                                    {post.like_count}
+                                    <i className='fas fa-comment'></i>
+                                    {post.commentIds.length}
                                 </p>
                             </div>
                         </Link>
