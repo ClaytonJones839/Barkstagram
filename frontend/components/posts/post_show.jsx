@@ -122,15 +122,22 @@ class PostShow extends React.Component {
                                 </div>
                                 <div className="post-show-likes">
                                     <div className="likes-div">
-                                        <LikesContainer 
-                                            post={this.props.post}
-                                            likers={likers}
-                                        />
-                                        {like_count === 1 ? (
-                                            `${like_count} like`
-                                        ) : (
-                                            `${like_count} likes`
-                                        )}
+                                        <div className="show-buttons">
+                                            <LikesContainer 
+                                                post={this.props.post}
+                                                likers={likers}
+                                            />
+                                            <button onClick={this.handleComment}>
+                                                Q
+                                            </button>
+                                        </div>
+                                        <div className="show-likecount">
+                                            {like_count === 1 ? (
+                                                `${like_count} like`
+                                            ) : (
+                                                `${like_count} likes`
+                                            )}
+                                        </div>
                                     </div>
                                     <div className="show-comment-container">
                                         <form className="show-comment-form">

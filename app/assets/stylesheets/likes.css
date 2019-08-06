@@ -6,7 +6,7 @@
 }
 
 .like-button {
-    /* padding-left: 5px; */
+    padding-left: 8px;
     padding-right: 5px;
     color: black;
     font-size: 26px;
@@ -29,8 +29,8 @@
 }
 
 .likes-div {
-    display: flex;
-    justify-content: left;
+    /* display: flex; */
+    /* justify-content: left;
     align-content: center;
-    align-items: center;
+    align-items: center; */
 }

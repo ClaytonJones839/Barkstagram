@@ -66,13 +66,13 @@
     /* padding-left: 8px; */
 }
 
-.post-show-buttons {
+/* .post-show-buttons {
     padding-top: 8px;
     height: 55px;
     display: flex;
     flex-direction: column;
     padding-left: 8px;
-}
+} */
 
 .post-show-wrapper {
     height: 600px;
@@ -95,3 +95,6 @@
     margin-bottom: 10px;
 }
 
+.show-buttons {
+    display: flex;
+}
