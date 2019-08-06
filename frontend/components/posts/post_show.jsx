@@ -23,11 +23,18 @@ class PostShow extends React.Component {
         this.props.fetchPostComments(this.props.postId)
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.comments === []) {
+        this.props.fetchPostComments(this.props.postId)
+        }
+    } 
+
     handleComment(e) {
         e.preventDefault();
         const comment = { body: this.state.body, post_id: this.props.postId };
         this.props.createComment(comment);
-        this.setState({ body: ''})
+        this.setState({ body: ''});
+        // this.props.fetchPostComments(this.props.postId)
     }
 
     update(field) {
@@ -52,7 +59,7 @@ class PostShow extends React.Component {
             // debugger
             return(
                 <div
-                    key={comment.id}
+                    key={comment.id - comment.user_id / 3}
                     className="post-show-comment">
                     <Link 
                         className="comment-author"
@@ -62,6 +69,14 @@ class PostShow extends React.Component {
                     <span className="comment-boyd">
                         {comment.body}
                     </span>
+                    {comment.user_id === this.props.currentUser.id ? (
+                        <button 
+                            onClick= {() => this.props.deleteComment(comment.id)}>
+                    -X-
+                        </button>
+                    ) : (
+                        <div></div>
+                    )}
                 </div>
             )
         })
