@@ -68,7 +68,7 @@
     /* border-top: 1px solid lightgrey; */
     margin-left: 5px;
     font-family: 'Roboto', sans-serif;
-    height: 160px;
+    max-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -90,3 +90,11 @@
     border-radius: 50%;
 }
 
+.feed-image-bottom-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.feed-image-bottom-likes, .feed-image-bottom-bio {
+    padding-left: 9px;
+}

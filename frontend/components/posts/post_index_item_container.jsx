@@ -1,37 +1,28 @@
 import { connect } from 'react-redux';
 import { fetchPost, deletePost } from '../../actions/posts_actions';
 import { fetchPostComments, createComment, deleteComment } from '../../actions/comments_actions';
-// import { createLike, deleteLike } from '../../actions/likes_actions';
-import PostShow from './post_show';
+import PostIndexItem from './post_index_item';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     const currentUser = state.entities.users[state.session.id];
-    const postId = ownProps.match.params.postId
-    const post = state.entities.posts[postId]
-    const comments = Object.values(state.entities.comments)
-
-    // const likers = post.likers
-    // const postAuthor = state.entities.users[post.user_id]
-    // debugger;
+    let comments;
+    if (state.entities.comments) {
+        comments = Object.values(state.entities.comments)
+    }
     return ({
         currentUser,
-        comments,
-        post,
-        postId
+        comments
     })
 };
-            
+
 const mapDispatchToProps = dispatch => {
-    return({
+    return ({
         fetchPost: id => dispatch(fetchPost(id)),
         deletePost: id => dispatch(deletePost(id)),
-        // createLike: like => dispatch(createLike(like)),
-        // deleteLike: id => dispatch(deleteLike(id)),
         fetchPostComments: postId => dispatch(fetchPostComments(postId)),
         deleteComment: id => dispatch(deleteComment(id)),
         createComment: comment => dispatch(createComment(comment))
     })
 }
-            
-export default connect(mapStateToProps, mapDispatchToProps)(PostShow)
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostIndexItem)

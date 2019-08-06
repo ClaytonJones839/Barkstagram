@@ -18,6 +18,10 @@
     width: 490px;
 }
 
+.feed-image-bottom-comments {
+    overflow: auto;
+}
+
 .show-textarea {
     border: none;
     /* border-top: 1px solid lightgrey; */
