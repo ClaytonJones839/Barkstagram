@@ -61,9 +61,11 @@
     height: 40px;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid lightgrey;
 }
 
 .feed-image-bottom {
+    /* border-top: 1px solid lightgrey; */
     margin-left: 5px;
     font-family: 'Roboto', sans-serif;
     height: 120px;
