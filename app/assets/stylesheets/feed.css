@@ -3,8 +3,8 @@
 }
 
 .feed-image {
-    width: 450px;
-    height: 450px;
+    width: 550px;
+    height: 550px;
 }
 
 .feed-container {
@@ -50,7 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    width: 450px;
+    width: 550px;
     background-color: white;
     /* height: 50px; */
     /* background-color: white;
@@ -61,6 +61,16 @@
     height: 40px;
     display: flex;
     align-items: center;
+}
+
+.feed-image-bottom {
+    margin-left: 5px;
+    font-family: 'Roboto', sans-serif;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
 
 .profile-link {

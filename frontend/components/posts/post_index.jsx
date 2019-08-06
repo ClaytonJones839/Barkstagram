@@ -12,6 +12,17 @@ class PostIndex extends Component {
     }
 
     render() {
+        // let postBio(post) => (
+        // <div>
+        //     <Link
+        //         className="profile-link"
+        //         to={`/users/${post.user_id}`}>
+        //         {post.author}
+        //     </Link>
+        //     {post.body}
+        // </div>
+        // )
+
         let allPosts = this.props.posts.map(post => {
             return(
                 <li className="feed-image-box" key={post.id }>
@@ -35,6 +46,32 @@ class PostIndex extends Component {
                             src={post.photoUrl}
                         />
                     </Link>
+                    <div className="feed-image-bottom">
+                        <div className="feed-image-bottom-buttons">
+                            button button button
+                        </div>
+                        <div className="feed-image-bottom-likes">
+                            {post.like_count} likes
+                        </div>
+                        <div className="feed-image-bottom-bio">
+                            {post.body ? (
+                                // {postBio}
+                                    <div>
+                                        <Link
+                                            className="profile-link"
+                                            to={`/users/${post.user_id}`}>
+                                            {post.author}
+                                        </Link>
+                                        {post.body}
+                                    </div>
+                            ) : (
+                                <div></div>
+                            )}
+                        </div>
+                        <div className="feed-image-bottom-comments">
+                            comments coming soon..
+                        </div>
+                    </div>
                     </div>
                 </li>
             )
