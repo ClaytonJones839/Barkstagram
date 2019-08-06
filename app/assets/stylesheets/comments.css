@@ -43,10 +43,18 @@
     border: none;
     background-color: none;
     width: 50px;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #3897f0;
 }
 
 .show-comment-container {
     border-top: 1px solid lightgrey;
     width: 300px;
     padding-left: 0;
+}
+
+.submit-comment-button:hover {
+    cursor: pointer;
 }

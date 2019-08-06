@@ -40,24 +40,21 @@
 .post-author {
     display: flex;
     padding: 8px;
-    align-items: center;
-    justify-content: space-between;
     height: 40px;
     font-weight: bolder;
     text-decoration: none;
 }
 
 .author-link {
+    display: flex;
     text-decoration: none;
     color: black;
+    align-items: center;
 }
 
 
 .post-comments {
-    display: flex;
-    flex-direction: column;
     height: 400px;
-    justify-content: space-between;
     border-top: 1px solid lightgrey;
     border-bottom: 1px solid lightgrey;
     padding-left: 8px;

@@ -75,7 +75,7 @@ class PostShow extends React.Component {
             )
         })
 
-        const { photoUrl, author, body, like_count, likers, id } = this.props.post;
+        const { photoUrl, author, body, like_count, likers, authorPhotoUrl } = this.props.post;
 
         // const likedStatus = 
         //     this.props.post.likers.includes(this.props.currentUser.id);
@@ -95,15 +95,29 @@ class PostShow extends React.Component {
                                     <Link 
                                         className="author-link"
                                         to={`/users/${this.props.post.user_id}`}>
-                                        {author}
+                                            <img className="feed-profile-pic"
+                                                src={authorPhotoUrl}
+                                            />
+                                            {author}
                                     </Link>
                                 </div>
                                 <div className="post-comments">
-                                    <span>
-                                        {postComments}
+                                    <span className="post-bio">
+                                        {body ? (
+                                            <div>
+                                                <Link
+                                                    className="profile-link"
+                                                    to={`/users/${this.props.post.user_id}`}>
+                                                    {author}
+                                                </Link>
+                                                &nbsp;{body}
+                                            </div>
+                                        ) : (
+                                            <div></div>
+                                        )}
                                     </span>
                                     <span>
-                                        {body}
+                                        {postComments}
                                     </span>
                                 </div>
                                 <div className="post-show-likes">
@@ -112,10 +126,10 @@ class PostShow extends React.Component {
                                             post={this.props.post}
                                             likers={likers}
                                         />
-                                        {this.props.post.like_count === 1 ? (
-                                            `${this.props.post.like_count} like`
+                                        {like_count === 1 ? (
+                                            `${like_count} like`
                                         ) : (
-                                            `${this.props.post.like_count} likes`
+                                            `${like_count} likes`
                                         )}
                                     </div>
                                     <div className="show-comment-container">
