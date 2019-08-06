@@ -55,12 +55,19 @@ class UserShow extends React.Component {
         let userPhotos = this.props.userPosts.map(post => {
             return(
                 <li key={post.id}>
-                    <Link to={`/posts/${post.id}`}>
-                        <img 
-                            className="user-page-photos"
-                            src={post.photoUrl} 
-                        />
-                    </Link>
+                    <div className="image-container">
+                        <Link to={`/posts/${post.id}`}>
+                            <img 
+                                className="user-page-photos"
+                                src={post.photoUrl} 
+                            />
+                            <div className="image-overlay">
+                                <p className="image-overlay-text">
+                                    <span className="overlay-heart">&#9829;</span>{post.like_count}
+                                </p>
+                            </div>
+                        </Link>
+                    </div>
                 </li>
             )
         })

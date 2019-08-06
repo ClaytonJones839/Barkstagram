@@ -88,12 +88,12 @@ class Likes extends React.Component {
             <div className="like-button-div">
                 <div className="like-button">
                     {(this.state.buttonText === "unlike") ? (
-                        <div className="like-button-unliked" onClick={this.handleLike}>
+                        <div className="like-button-liked" onClick={this.handleLike}>
                             {/* <span>&#9825;</span> */}
                             <span>&#9829;</span>
                         </div>
                         ) : (
-                        <div className="like-button-liked" onClick={this.handleLike}>
+                        <div className="like-button-unliked" onClick={this.handleLike}>
                             <span>&#9825;</span>
                         </div>
                     )}

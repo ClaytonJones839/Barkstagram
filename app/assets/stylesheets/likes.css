@@ -18,12 +18,12 @@
     cursor: pointer;
 }
 
-.like-button-unliked {
+.like-button-liked {
     color: red;
 
 }
 
-.like-button-liked {
+.like-button-unliked {
     color: black;
     /* background-color: red */
 }
