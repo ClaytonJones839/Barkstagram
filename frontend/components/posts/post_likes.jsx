@@ -98,14 +98,6 @@ class Likes extends React.Component {
                         </div>
                     )}
                 </div>
-                <div>
-
-                {this.props.post.like_count === 1 ? (
-                    `${this.props.post.like_count} like`
-                ) : (
-                    `${this.props.post.like_count} likes`
-                )}             
-                </div>
             </div>
         </div>
     )}

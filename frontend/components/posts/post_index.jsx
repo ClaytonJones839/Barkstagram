@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container'
+import LikeContainer from './post_likes_container'
 
 // import PostIndexItem from './post_index_item';
 // import PostFormContainer from './post_form_container';
@@ -38,7 +39,10 @@ class PostIndex extends Component {
                     </Link>
                     <div className="feed-image-bottom">
                         <div className="feed-image-bottom-buttons">
-                            button button button
+                            <LikeContainer 
+                                post={post}
+                                likers={post.likers}
+                            />
                         </div>
                         <div className="feed-image-bottom-likes">
                             {post.like_count === 1 ? (

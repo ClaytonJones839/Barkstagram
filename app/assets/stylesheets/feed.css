@@ -3,8 +3,8 @@
 }
 
 .feed-image {
-    width: 550px;
-    height: 550px;
+    width: 500px;
+    height: 500px;
 }
 
 .feed-container {
@@ -50,7 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    width: 550px;
+    width: 500px;
     background-color: white;
     /* height: 50px; */
     /* background-color: white;
@@ -66,7 +66,7 @@
 .feed-image-bottom {
     margin-left: 5px;
     font-family: 'Roboto', sans-serif;
-    height: 100px;
+    height: 120px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

@@ -103,15 +103,19 @@ class PostShow extends React.Component {
                             <button onClick={this.handleLike}>
                                 33
                             </button> */}
+                            <div className="likes-div">
                             <LikesContainer 
                                 // like_count={like_count} 
                                 post={this.props.post}
                                 likers={likers}
                                 likeStatus={likedStatus}
-                                // currentUserId={this.props.currentUser.id}
-                                // createLike={this.props.createLike}
-                                // deleteLike={this.props.deleteLike}/>
                                 />
+                                    {this.props.post.like_count === 1 ? (
+                                        `${this.props.post.like_count} like`
+                                    ) : (
+                                    `${this.props.post.like_count} likes`
+                                    )}
+                                </div>
                             <span>
                                 Comment button coming soon
                             </span>

@@ -27,3 +27,10 @@
     color: black;
     /* background-color: red */
 }
+
+.likes-div {
+    display: flex;
+    justify-content: left;
+    align-content: center;
+    align-items: center;
+}
