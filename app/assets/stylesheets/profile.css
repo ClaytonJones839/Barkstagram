@@ -113,6 +113,10 @@
     cursor: pointer;
 }
 
+.user-page-photos {
+    z-index: 1;
+}
+
 .user-page-photos:hover {
     filter: brightness(0.3);
 }

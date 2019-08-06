@@ -86,17 +86,25 @@ class Likes extends React.Component {
                 </button> */}
             {/* </div> */}
             <div className="like-button-div">
-                {this.props.post.likers.includes(this.props.currentUser.id) ? (
-                    <span className="like-button liked" onClick={this.handleLike}>
-                        {this.state.buttonText}
-                    </span>
-                ) : (
-                    <span className="like-button unliked" onClick={this.handleLike}>
-                        {this.state.buttonText}
-                    </span>
-                )}
+                <div className="like-button">
+                    {(this.state.buttonText === "unlike") ? (
+                        <div className="like-button-unliked" onClick={this.handleLike}>
+                            {/* <span>&#9825;</span> */}
+                            <span>&#9829;</span>
+                        </div>
+                        ) : (
+                        <div className="like-button-liked" onClick={this.handleLike}>
+                            <span>&#9825;</span>
+                        </div>
+                    )}
+                </div>
                 <div>
-                    {this.props.post.like_count} likes
+
+                {this.props.post.like_count === 1 ? (
+                    `${this.props.post.like_count} like`
+                ) : (
+                    `${this.props.post.like_count} likes`
+                )}             
                 </div>
             </div>
         </div>
