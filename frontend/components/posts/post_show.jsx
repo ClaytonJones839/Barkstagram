@@ -118,10 +118,7 @@ class PostShow extends React.Component {
                                             `${this.props.post.like_count} likes`
                                         )}
                                     </div>
-                                    <span>
-                                        Comment button coming soon
-                                    </span>
-                                    <span>
+                                    <div className="show-comment-container">
                                         <form className="show-comment-form">
                                             <textarea 
                                                 className="show-textarea" 
@@ -135,7 +132,7 @@ class PostShow extends React.Component {
                                                 Post
                                             </button>
                                         </form>
-                                    </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
