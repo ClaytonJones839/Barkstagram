@@ -54,19 +54,20 @@ class PostShow extends React.Component {
                     key={comment.id - comment.user_id / 3}
                     className="post-show-comment">
                     <Link 
-                        className="comment-author"
+                        className="profile-link"
                         to={`/users/${comment.user_id}`}>
                         {comment.author}
                     </Link>
                     <span className="comment-boyd">
-                        {comment.body}
+                        &nbsp;{comment.body}
                     </span>
                     {comment.user_id === this.props.currentUser.id ? (
                         <button 
+                            className="delete-comment-button"
                             onClick={() => this.props.deleteComment(comment.id).then(() => {
                                 this.props.fetchPostComments(this.props.postId)
                             })}>
-                    -X-
+                            X
                         </button>
                     ) : (
                         <div></div>
@@ -77,8 +78,6 @@ class PostShow extends React.Component {
 
         const { photoUrl, author, body, like_count, likers, authorPhotoUrl } = this.props.post;
 
-        // const likedStatus = 
-        //     this.props.post.likers.includes(this.props.currentUser.id);
         return (
         <div>
             <NavBarContainer />

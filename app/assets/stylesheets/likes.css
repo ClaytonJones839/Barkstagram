@@ -33,3 +33,7 @@
     align-content: center;
     align-items: center; */
 }
+
+.show-likecount {
+    padding-left: 8px;
+}

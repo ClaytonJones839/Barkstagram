@@ -58,3 +58,7 @@
 .submit-comment-button:hover {
     cursor: pointer;
 }
+
+.post-show-comment {
+    padding-bottom: 3px;
+}

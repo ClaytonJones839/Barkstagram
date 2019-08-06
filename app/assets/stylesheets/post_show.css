@@ -60,6 +60,7 @@
     padding-left: 8px;
     padding-top: 8px;
     overflow: auto;
+    font-size: 14px;
 }
 .post-show-likes {
     padding-top: 8px;
@@ -110,6 +111,14 @@
     transform: scale(1.1, 1);
 }
 
-.bark-button:hover {
+.bark-button:hover, .delete-comment-button:hover {
     cursor: pointer;
+}
+
+.delete-comment-button {
+    font-size: 10px;
+    color: grey;
+    border: none;
+    background: none;
+    outline: none;
 }
