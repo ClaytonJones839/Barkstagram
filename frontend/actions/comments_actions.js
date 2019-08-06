@@ -11,8 +11,8 @@ const receiveComment = comment => ({
 })
 
 const receivePostComments = comments => ({
-    type: RECEIVE_POST_COMMENT,
-    comment
+    type: RECEIVE_POST_COMMENTS,
+    comments
 })
 
 const removeComment = comment => ({

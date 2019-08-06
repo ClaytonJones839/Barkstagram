@@ -5,4 +5,6 @@ json.authorPhotoUrl url_for(post.user.photo)
 json.photoUrl url_for(post.photo)
 json.likers post.likers.pluck(:user_id)
 
+json.commentIds post.comment_ids
+
 

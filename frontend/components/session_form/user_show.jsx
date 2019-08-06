@@ -11,16 +11,11 @@ class UserShow extends React.Component {
             this.logout = this.props.logout
             this.handleNewPostForm = this.handleNewPostForm.bind(this)
             this.handleEditUser = this.handleEditUser.bind(this)
-            // this.userPage = null;
-            
-            // if (this.props.allUsers[this.props.match.params.userId]) {
-            //     this.userPage = this.props.allUsers[this.props.match.params.userId]
-            // }
+
+
     }
 
     componentDidMount() {
-        // const id = this.props.match.params.userId;
-        // this.props.fetchUser(this.props.match.params.userId);
         this.props.fetchPosts();
         this.props.fetchUser(this.props.match.params.userId);
 
@@ -40,8 +35,6 @@ class UserShow extends React.Component {
     }
 
     render() {
-        // debugger
-
         if (!this.props.profileUser) {
             return (
                 <h2>

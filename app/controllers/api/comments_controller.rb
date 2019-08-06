@@ -1,10 +1,11 @@
 class Api::CommentsController < ApplicationController
 
     def show
+        @comment = Comment.find_by(id: params[:id])
     end
 
     def index
-        @comments = Comment.where(post_id: params[:post_id])
+        @comments = Comment.all.where(post_id: params[:post_id])
     end
 
     def create 
@@ -29,7 +30,7 @@ class Api::CommentsController < ApplicationController
     end
 
     private
-        def like_params
+        def comment_params
             params.require(:comment).permit(:post_id, :body)
         end
 end
