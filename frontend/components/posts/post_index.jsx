@@ -41,7 +41,11 @@ class PostIndex extends Component {
                             button button button
                         </div>
                         <div className="feed-image-bottom-likes">
-                            {post.like_count} likes
+                            {post.like_count === 1 ? (
+                            `1 like`
+                            ) : (
+                            `${post.like_count} likes`
+                            )}
                         </div>
                         <div className="feed-image-bottom-bio">
                             {post.body ? (
