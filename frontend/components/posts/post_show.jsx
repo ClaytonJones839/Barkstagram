@@ -12,9 +12,7 @@ class PostShow extends React.Component {
             // commentBody: ''
             body: ''
         }
-        // this.handleLike = this.handleLike.bind(this)
         this.handleComment = this.handleComment.bind(this)
-        // this.handleProfilePage = this.handleProfilePage.bind(this)
     }
 
     componentDidMount() {
@@ -23,19 +21,6 @@ class PostShow extends React.Component {
         this.props.fetchPostComments(this.props.postId)
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.comments === []) {
-        this.props.fetchPostComments(this.props.postId)
-        }
-    } 
-
-    handleComment(e) {
-        e.preventDefault();
-        const comment = { body: this.state.body, post_id: this.props.postId };
-        this.props.createComment(comment);
-        this.setState({ body: ''});
-        // this.props.fetchPostComments(this.props.postId)
-    }
 
     update(field) {
         return (e) => {
@@ -43,9 +28,16 @@ class PostShow extends React.Component {
         }
     }
 
-    render() {
-        // debugger
+    handleComment(e) {
+        e.preventDefault();
+        const comment = { body: this.state.body, post_id: this.props.postId };
+        this.props.createComment(comment).then(() => {
+            this.props.fetchPostComments(this.props.postId)
+        })
+        this.setState({ body: '' });
+    }
 
+    render() {
 
         if (!this.props.post) {
             return (
@@ -71,7 +63,9 @@ class PostShow extends React.Component {
                     </span>
                     {comment.user_id === this.props.currentUser.id ? (
                         <button 
-                            onClick= {() => this.props.deleteComment(comment.id)}>
+                            onClick={() => this.props.deleteComment(comment.id).then(() => {
+                                this.props.fetchPostComments(this.props.postId)
+                            })}>
                     -X-
                         </button>
                     ) : (

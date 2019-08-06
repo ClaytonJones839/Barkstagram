@@ -6,7 +6,6 @@ import {
     REMOVE_POST 
 } from '../actions/posts_actions';
 
-
 // import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/likes_actions';
 
 const postsReducer = ( state={}, action ) => {
