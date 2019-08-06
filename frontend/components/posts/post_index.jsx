@@ -12,16 +12,6 @@ class PostIndex extends Component {
     }
 
     render() {
-        // let postBio(post) => (
-        // <div>
-        //     <Link
-        //         className="profile-link"
-        //         to={`/users/${post.user_id}`}>
-        //         {post.author}
-        //     </Link>
-        //     {post.body}
-        // </div>
-        // )
 
         let allPosts = this.props.posts.map(post => {
             return(
@@ -55,14 +45,13 @@ class PostIndex extends Component {
                         </div>
                         <div className="feed-image-bottom-bio">
                             {post.body ? (
-                                // {postBio}
-                                    <div>
-                                        <Link
-                                            className="profile-link"
-                                            to={`/users/${post.user_id}`}>
-                                            {post.author}
-                                        </Link>
-                                        {post.body}
+                                <div>
+                                    <Link
+                                        className="profile-link"
+                                        to={`/users/${post.user_id}`}>
+                                        {post.author}
+                                    </Link>
+                                        &nbsp;{post.body}
                                     </div>
                             ) : (
                                 <div></div>
