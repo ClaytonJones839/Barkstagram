@@ -1,22 +1,27 @@
-export const fetchLike = id => {
+export const fetchPostComments = post_id => {
     return $.ajax({
         method: "GET",
-        url: `api/likes/${id}`
+        url: `api/posts/${post_id}/comments`
     });
 };
 
+export const fetchComment = id => {
+    return $.ajax({
+        method: "GET",
+        url: `api/comments/${id}`
+    });
+};
 
-
-export const createLike = like => {
+export const createComment = comment => {
     return $.ajax({
         method: "POST",
-        url: `api/likes`,
-        data: { like }
+        url: `api/comments`,
+        data: { comment }
     });
 };
 
-export const deleteLike = post_id => (
+export const deleteLike = id => (
     $.ajax({
         method: 'DELETE',
-        url: `/api/likes/${post_id}`
+        url: `/api/comments/${id}`
     }));
