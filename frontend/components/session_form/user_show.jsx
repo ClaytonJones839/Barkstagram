@@ -6,16 +6,14 @@ import NavBarContainer from '../nav_bar/nav_bar_container'
 class UserShow extends React.Component {
     constructor(props) {
         super(props)
-        // debugger
-        if (this.props.currentUser.followingIds.includes(parseInt(this.props.match.params.userId))) {
-            this.state = {
-                followButton: "unfollow"
-            }
-        } else {
-            this.state = {
-                followButton: "follow"
-            }
+
+        this.state = {
+            followButton: 
+                this.props.currentUser.followingIds
+                    .includes(parseInt(this.props.match.params.userId)) ? 
+                    "Unfollow" : "Follow"
         }
+
 
         this.userPosts = this.props.userPosts;
         this.currentUser = this.props.currentUser;
@@ -29,22 +27,31 @@ class UserShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchPosts();
-        this.props.fetchUser(this.props.match.params.userId);
-
+        this.props.fetchUser(this.props.match.params.userId).then(() => {
+            this.setState({
+                followerCount: this.props.followerIds.length,
+                followButton: this.props.currentUser.followingIds.includes(parseInt(this.props.profileUser.id)) ? "Unfollow" : "Follow"
+            })
+        })
     }
 
+
     handleFollow(e) {
-        if (this.state.followButton === "unfollow") {
+        if (this.state.followButton === "Unfollow") {
             this.props.deleteFollow(this.props.profileUser.id).then(() => {
                 this.setState({
-                    followButton: "follow"
+                    followButton: "Follow",
+                    followerCount: this.state.followerCount - 1
                 })
-            })
+            }).then(() => this.props.fetchUser(this.props.match.params.userId))
         } else {
             this.props.createFollow({ followed_user_id: this.props.profileUser.id})
                 .then(() => {
-                    this.setState({ followButton: "unfollow" })
-                })
+                    this.setState({ 
+                        followButton: "Unfollow",
+                        followerCount: this.state.followerCount + 1 
+                    })
+                }).then(() => this.props.fetchUser(this.props.match.params.userId))
         }
     }
 
@@ -68,9 +75,14 @@ class UserShow extends React.Component {
                 </h2>
             )
         }
+        const { 
+            username, 
+            photoUrl, 
+            id, 
+            followerIds, 
+            followingIds 
+        } = this.props.profileUser
 
-
-        const { username, photoUrl, id } = this.props.profileUser
         let userPhotos = this.props.userPosts.map(post => {
             return(
                 <li key={post.id}>
@@ -140,8 +152,8 @@ class UserShow extends React.Component {
                     </div>
                     <div className="profile-top-down">
                         <span>{this.props.userPosts.length} posts</span>
-                        <span className="cursor">## followers</span>
-                        <span className="cursor">## following</span>
+                        <span className="cursor">{this.state.followerCount} Followers</span>
+                        <span className="cursor">{followingIds.length} Following</span>
                     </div>
                     </div>
                 </div>

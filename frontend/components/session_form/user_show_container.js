@@ -8,16 +8,24 @@ import UserShow from './user_show';
 const mapStateToProps = (state, ownProps) => {
     const profileId = ownProps.match.params.userId
     const profileUser = state.entities.users[profileId]
-    let userPosts = null
+    let userPosts = null;
+    let followerIds = null;
+    let followStatus = false;
+    let currentUser = state.entities.users[state.session.id];
     if (profileUser) {
         userPosts = Object.values(state.entities.posts)
-            .filter(post => post.user_id === profileUser.id)
+            .filter(post => post.user_id === profileUser.id),
+        followerIds = profileUser.followerIds,
+        followStatus = (followerIds.includes(currentUser.id))
     }
-    let currentUser = state.entities.users[state.session.id];
+
+
     return {
         currentUser,
         userPosts,
-        profileUser
+        profileUser,
+        followerIds,
+        followStatus
     };
 };
 
