@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { fetchUser } from "../../actions/users_actions";
 import { fetchPosts } from "../../actions/posts_actions";
 import { logout } from '../../actions/session_actions';
+import { createFollow, deleteFollow } from '../../actions/followings_actions'
 import UserShow from './user_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -23,7 +24,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
     fetchPosts: () => dispatch(fetchPosts()),
-    fetchUser: userId => dispatch(fetchUser(userId))
+    fetchUser: userId => dispatch(fetchUser(userId)),
+    createFollow: follow => dispatch(createFollow(follow)),
+    
 });
 
 export default connect(

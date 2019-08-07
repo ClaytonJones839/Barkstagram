@@ -6,11 +6,23 @@ import NavBarContainer from '../nav_bar/nav_bar_container'
 class UserShow extends React.Component {
     constructor(props) {
         super(props)
-            this.userPosts = this.props.userPosts;
-            this.currentUser = this.props.currentUser;
-            this.logout = this.props.logout
-            this.handleNewPostForm = this.handleNewPostForm.bind(this)
-            this.handleEditUser = this.handleEditUser.bind(this)
+
+        if (this.props.currentUser.followingIds.includes(this.props.match.params.userId)) {
+            this.state = {
+                followButton: "unfollow"
+            }
+        } else {
+            this.state = {
+                followButton: "follow"
+            }
+        }
+
+        this.userPosts = this.props.userPosts;
+        this.currentUser = this.props.currentUser;
+        this.logout = this.props.logout
+        this.handleNewPostForm = this.handleNewPostForm.bind(this)
+        this.handleEditUser = this.handleEditUser.bind(this)
+        this.handleFollow = this.handleFollow.bind(this)
 
 
     }
@@ -21,6 +33,20 @@ class UserShow extends React.Component {
 
     }
 
+    handleFollow(e) {
+        if (this.state.followButton === "unfollow") {
+            this.props.deleteFollow(this.props.profileUser.id).then(() => {
+                this.setState({
+                    buttonText: "follow"
+                })
+            })
+        } else {
+            this.props.createFollow({ followed_user_id: this.props.profileUser.id})
+                .then(() => {
+                    this.setState({ buttonText: "follow" })
+                })
+        }
+    }
 
     handleNewPostForm(e) {
         e.preventDefault();
@@ -104,7 +130,11 @@ class UserShow extends React.Component {
                                 </div>
                             ) : (
                                 <div className="profile-top-buttons">
-                                    <div> follow/unfollow button </div>
+                                    <button
+                                        className="profile-button"
+                                        onClick={this.handleFollow}>
+                                        {this.state.followButton}
+                                    </button>
                                 </div>
                             )}
                     </div>

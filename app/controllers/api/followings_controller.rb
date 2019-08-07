@@ -1,7 +1,7 @@
 class Api::FollowingsController < ApplicationController
 
     def create
-        @follow = Following.new(comment_params)
+        @follow = Following.new(follow_params)
         @follow.user_id = current_user.id 
 
         if @follow.save
@@ -12,7 +12,7 @@ class Api::FollowingsController < ApplicationController
     end
 
     def destroy
-        @follow = Following.find_by(id: params[:id])
+        @follow = Following.where(followed_user_id: params[:id], user_id: current_user.id)
         if @follow && @follow.user_id == current_user.id
             @follow.destroy
             render :show
@@ -30,7 +30,7 @@ class Api::FollowingsController < ApplicationController
     end
 
     private
-    def following_params
+    def follow_params
         params.require(:following).permit(:followed_user_id)
     end
 end
