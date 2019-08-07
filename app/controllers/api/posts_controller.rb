@@ -10,8 +10,9 @@ class Api::PostsController < ApplicationController
     render :index
   end
 
-  def feed
-
+  def feed_posts
+    @posts = Post.where(user_id: current_user.followings.ids)
+    render :index
   end
 
   def profile_posts

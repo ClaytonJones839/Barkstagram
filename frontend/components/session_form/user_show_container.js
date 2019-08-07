@@ -17,7 +17,6 @@ const mapStateToProps = (state, ownProps) => {
     if (profileUser) {
         userPosts = Object.values(state.entities.posts)
             .filter(post => post.user_id === profileUser.id),
-
         followerIds = profileUser.followerIds,
         followStatus = (followerIds.includes(currentUser.id))
     }

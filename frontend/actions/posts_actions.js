@@ -37,6 +37,11 @@ export const fetchPosts = () => dispatch => (
         .then(posts => dispatch(receiveAllPosts(posts)))
 );
 
+export const fetchFeedPosts = () => dispatch => (
+    PostAPIUtil.fetchFeedPosts()
+        .then(posts => dispatch(receiveAllPosts(posts)))
+);
+
 export const fetchProfilePosts = (userId) => dispatch => (
     PostAPIUtil.fetchProfilePosts(userId)
         .then(posts => dispatch(receiveAllPosts(posts)))

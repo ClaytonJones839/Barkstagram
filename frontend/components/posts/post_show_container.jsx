@@ -1,11 +1,9 @@
 import { connect } from 'react-redux';
 import { fetchPost, deletePost } from '../../actions/posts_actions';
 import { fetchPostComments, createComment, deleteComment } from '../../actions/comments_actions';
-// import { createLike, deleteLike } from '../../actions/likes_actions';
 import PostShow from './post_show';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     const currentUser = state.entities.users[state.session.id];
     const postId = ownProps.match.params.postId
     const post = state.entities.posts[postId]

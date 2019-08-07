@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy, :show]
     resources :followings, only: [:create, :destroy, :show]
     get 'profile/posts/:id', :to => 'posts#profile_posts'
+    get 'feed/posts', :to => 'posts#feed_posts'
   end
 
 

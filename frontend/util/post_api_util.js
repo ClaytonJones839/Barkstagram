@@ -12,6 +12,13 @@ export const fetchProfilePosts = (id) => (
     })
 );
 
+export const fetchFeedPosts = () => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/feed/posts`
+    })
+);
+
 export const fetchPost = id => (
     $.ajax({
         method: 'GET',

@@ -14,9 +14,9 @@ class FeedIndexItem extends React.Component {
     }
 
 
-    componentDidMount() {
-        this.props.fetchPost(this.props.post.id)
-    }
+    // componentDidMount() {
+    //     this.props.fetchPost(this.props.post.id)
+    // }
 
 
     update(field) {
@@ -39,8 +39,7 @@ class FeedIndexItem extends React.Component {
         // debugger
 
         let { post } = this.props;
-        // debugger
-        // let comments = Object.values(this.props.post.comments)
+
 
         let postComments = Object.values(this.props.post.comments).map(comment => {
             return (
