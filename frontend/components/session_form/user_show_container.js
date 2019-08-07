@@ -5,7 +5,6 @@ import { logout } from '../../actions/session_actions';
 import UserShow from './user_show';
 
 const mapStateToProps = (state, ownProps) => {
-    // let userPage = state.entities.users[ownProps.match.params.userId]
     const profileId = ownProps.match.params.userId
     const profileUser = state.entities.users[profileId]
     let userPosts = null
@@ -14,10 +13,6 @@ const mapStateToProps = (state, ownProps) => {
             .filter(post => post.user_id === profileUser.id)
     }
     let currentUser = state.entities.users[state.session.id];
-
-    // let userPosts = Object.values(state.entities.posts)
-    //     .filter(post => post.user_id === profileUser.id);
-
     return {
         currentUser,
         userPosts,

@@ -44,7 +44,7 @@ class UserShow extends React.Component {
         }
 
 
-        const { username, photoUrl } = this.props.profileUser
+        const { username, photoUrl, id } = this.props.profileUser
         let userPhotos = this.props.userPosts.map(post => {
             return(
                 <li key={post.id}>
@@ -84,23 +84,29 @@ class UserShow extends React.Component {
                     <div className="profile-top-right">
                     <div className="profile-top-up" >
                         <h1>{username}</h1>
-                        <div className="profile-top-buttons">
-                            <button 
-                                className="profile-button" 
-                                onClick={this.logout}>
-                                Log Out
-                            </button>
-                            <button
-                                className="profile-button"
-                                onClick={this.handleEditUser}>
-                                Edit Profile
-                            </button>
-                            <button 
-                                className="profile-button" 
-                                onClick={this.handleNewPostForm}>
-                                Add Photo
-                            </button>
-                        </div>
+                            {(id === this.props.currentUser.id) ? (
+                                <div className="profile-top-buttons">
+                                    <button 
+                                        className="profile-button" 
+                                        onClick={this.logout}>
+                                        Log Out
+                                    </button>
+                                    <button
+                                        className="profile-button"
+                                        onClick={this.handleEditUser}>
+                                        Edit Profile
+                                    </button>
+                                    <button 
+                                        className="profile-button" 
+                                        onClick={this.handleNewPostForm}>
+                                        Add Photo
+                                    </button>
+                                </div>
+                            ) : (
+                                <div className="profile-top-buttons">
+                                    <div> follow/unfollow button </div>
+                                </div>
+                            )}
                     </div>
                     <div className="profile-top-down">
                         <span>{this.props.userPosts.length} posts</span>
