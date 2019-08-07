@@ -17,7 +17,7 @@ const receiveFollow = user => ({
 // });
 
 const removeFollow = user => ({
-    type: REMOVE_USER,
+    type: RECEIVE_USER,
     user
 });
 

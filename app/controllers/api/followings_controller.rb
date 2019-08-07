@@ -12,13 +12,9 @@ class Api::FollowingsController < ApplicationController
     end
 
     def destroy
-        @follow = Following.where(followed_user_id: params[:id], user_id: current_user.id)
-        if @follow && @follow.user_id == current_user.id
-            @follow.destroy
-            render :show
-        else
-            render json: ["Not currently following"], status: 422
-        end
+        @follow = Following.where(followed_user_id: params[:id]).where(user_id: current_user.id)[0]
+        @follow.destroy
+        render :show
     end
 
     def index
@@ -31,6 +27,6 @@ class Api::FollowingsController < ApplicationController
 
     private
     def follow_params
-        params.require(:following).permit(:followed_user_id)
+        params.require(:follow).permit(:followed_user_id)
     end
 end

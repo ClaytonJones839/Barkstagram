@@ -6,8 +6,8 @@ import NavBarContainer from '../nav_bar/nav_bar_container'
 class UserShow extends React.Component {
     constructor(props) {
         super(props)
-
-        if (this.props.currentUser.followingIds.includes(this.props.match.params.userId)) {
+        // debugger
+        if (this.props.currentUser.followingIds.includes(parseInt(this.props.match.params.userId))) {
             this.state = {
                 followButton: "unfollow"
             }
@@ -37,13 +37,13 @@ class UserShow extends React.Component {
         if (this.state.followButton === "unfollow") {
             this.props.deleteFollow(this.props.profileUser.id).then(() => {
                 this.setState({
-                    buttonText: "follow"
+                    followButton: "follow"
                 })
             })
         } else {
             this.props.createFollow({ followed_user_id: this.props.profileUser.id})
                 .then(() => {
-                    this.setState({ buttonText: "follow" })
+                    this.setState({ followButton: "unfollow" })
                 })
         }
     }

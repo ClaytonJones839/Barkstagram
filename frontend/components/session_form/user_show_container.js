@@ -26,7 +26,7 @@ const mapDispatchToProps = dispatch => ({
     fetchPosts: () => dispatch(fetchPosts()),
     fetchUser: userId => dispatch(fetchUser(userId)),
     createFollow: follow => dispatch(createFollow(follow)),
-    
+    deleteFollow: follow => dispatch(deleteFollow(follow))
 });
 
 export default connect(
