@@ -11,6 +11,25 @@ class User < ApplicationRecord
   has_many :posts
   has_one_attached :photo
 
+  has_many :active_follows,  
+    class_name: :following,
+    foreign_key: :user_id,
+    dependent: :destroy
+
+  has_many :passive_follows, 
+    class_name: :following,
+    foreign_key: :followed_user_id,
+    dependent: :destroy
+
+  has_many :following, 
+    through: :active_follows,  
+    source: :followed_user_id
+
+  has_many :followers, 
+    through: :passive_follows, 
+    source: :user_id
+  
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user
