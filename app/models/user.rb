@@ -12,22 +12,22 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   has_many :active_follows,  
-    class_name: :following,
+    class_name: :Following,
     foreign_key: :user_id,
     dependent: :destroy
 
   has_many :passive_follows, 
-    class_name: :following,
+    class_name: :Following,
     foreign_key: :followed_user_id,
     dependent: :destroy
 
-  has_many :following, 
-    through: :active_follows,  
-    source: :followed_user_id
+  has_many :followings, 
+    through: :active_follows,
+    source: :following
 
   has_many :followers, 
     through: :passive_follows, 
-    source: :user_id
+    source: :follower
   
 
   def self.find_by_credentials(username, password)
