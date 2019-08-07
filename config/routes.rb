@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy, :show]
     resources :comments, only: [:create, :destroy, :show]
     resources :followings, only: [:create, :destroy, :show]
+    get 'profile/posts/:id', :to => 'posts#profile_posts'
   end
 
 

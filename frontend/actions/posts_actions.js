@@ -37,6 +37,11 @@ export const fetchPosts = () => dispatch => (
         .then(posts => dispatch(receiveAllPosts(posts)))
 );
 
+export const fetchProfilePosts = (userId) => dispatch => (
+    PostAPIUtil.fetchProfilePosts(userId)
+        .then(posts => dispatch(receiveAllPosts(posts)))
+);
+
 export const fetchPost = id => dispatch => {
     PostAPIUtil.fetchPost(id)
         .then(post => dispatch(receivePost(post)))
@@ -62,17 +67,4 @@ export const deletePost = id => dispatch => (
 );
 
 
-// export const createLike = like => dispatch => {
-//     return (
-//         LikeAPIUtil.createLike(like)
-//             .then(like => (dispatch(receivePost(like.post_id))))
-//     )
-// };
-
-// export const deleteLike = like_id => dispatch => {
-//     return (
-//         LikeAPIUtil.deleteLike(like_id)
-//             .then(post => (dispatch(receivePost(like.post_id))))
-//     )
-// };
 

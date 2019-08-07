@@ -26,7 +26,7 @@ class UserShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPosts();
+        this.props.fetchProfilePosts(this.props.match.params.userId);
         this.props.fetchUser(this.props.match.params.userId).then(() => {
             this.setState({
                 followerCount: this.props.followerIds.length,
