@@ -15,7 +15,7 @@ class FeedIndexItem extends React.Component {
 
 
     componentDidMount() {
-        this.props.fetchPostComments(this.props.post.id)
+        this.props.fetchPost(this.props.post.id)
     }
 
 
@@ -36,11 +36,14 @@ class FeedIndexItem extends React.Component {
 
 
     render() {
+        // debugger
 
         let { post } = this.props;
-        let comments = Object.values(post.comments)
-        let postComments = comments.map(comment => {
-                return (
+        // debugger
+        // let comments = Object.values(this.props.post.comments)
+
+        let postComments = Object.values(this.props.post.comments).map(comment => {
+            return (
                     <div
                         key={comment.id}
                         className="post-show-comment">
@@ -55,53 +58,6 @@ class FeedIndexItem extends React.Component {
                     </div>
                 )
         })
-
-            // postComments = his.props.comments.map(comment => {
-            //     return (
-            //         <div
-            //             key={comment.id - comment.user_id / 3}
-            //             className="post-show-comment">
-            //             <Link
-            //                 className="profile-link"
-            //                 to={`/users/${comment.user_id}`}>
-            //                 {comment.author}
-            //             </Link>
-            //             <span className="comment-body">
-            //                 &nbsp;{comment.body}
-            //             </span>
-            //         </div>
-            //     )
-            // })
- 
-        // = this.props.comments.map(comment => {
-            // debugger
-            // return (
-        //         <div
-        //             key={comment.id - comment.user_id / 3}
-        //             className="post-show-comment">
-        //             <Link
-        //                 className="profile-link"
-        //                 to={`/users/${comment.user_id}`}>
-        //                 {comment.author}
-        //             </Link>
-        //             <span className="comment-boyd">
-        //                 &nbsp;{comment.body}
-        //             </span>
-        //             {comment.user_id === this.props.currentUser.id ? (
-        //                 <button
-        //                     className="delete-comment-button"
-        //                     onClick={() => this.props.deleteComment(comment.id).then(() => {
-        //                         this.props.fetchPostComments(this.props.postId)
-        //                     })}>
-        //                     X
-        //                 </button>
-        //             ) : (
-        //                     <div></div>
-        //                 )}
-        //         </div>
-        //     )
-        // })
-
 
 
     return(
@@ -146,7 +102,7 @@ class FeedIndexItem extends React.Component {
                     </div>
                     <div className="feed-image-bottom-bio">
                         {post.body ? (
-                            <div>
+                            <div className="feed-bio">
                                 <Link
                                     className="profile-link"
                                     to={`/users/${post.user_id}`}>

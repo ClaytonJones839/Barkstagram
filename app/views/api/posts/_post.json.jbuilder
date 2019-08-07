@@ -6,5 +6,11 @@ json.photoUrl url_for(post.photo)
 json.likers post.likers.pluck(:user_id)
 
 json.commentIds post.comment_ids
-json.comments post.comments
+json.comments post.comments do |comment|
+    json.author comment.user.username
+    json.user_id comment.user_id
+    json.body comment.body
+    json.post_id comment.post_id
+    json.id comment.id
+end
 

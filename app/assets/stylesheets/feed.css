@@ -96,9 +96,13 @@
 }
 
 .feed-image-bottom-likes, .feed-image-bottom-bio {
-    padding-left: 9px;
+    padding-left: 8px;
 }
 
 .feed-comment-form {
     display: flex;
+}
+
+.feed-bio {
+    padding-bottom: 3px;
 }
