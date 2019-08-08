@@ -5,11 +5,17 @@ import { withRouter } from 'react-router-dom'
 class NavSearch extends React.Component {
     constructor(props) {
         super(props)
+
+    }
+
+
+    componentDidMount() {
+        debugger
+        this.props.fetchUsers();
     }
 
     render() {
         
-
     return(
         <input
             className="user-search"

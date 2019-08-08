@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom'
-import NavSearchContainer from './nav_search'
+import NavSearchContainer from './nav_search_container'
 
 class NavBar extends React.Component {
     constructor(props) {
