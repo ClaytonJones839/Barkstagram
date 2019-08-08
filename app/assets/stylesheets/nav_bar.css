@@ -90,7 +90,6 @@
     height: 14px;
     left: 0;
     right: 0;
-    /* position: absolute; */
     top: 20px;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -145,8 +144,14 @@
 }
 
 .search-result-li:hover {
-    background-color: rgb(233, 232, 232);
+    background-color: #fafafa;
 }
+/* 
+.search-results-list li:first-of-type:hover {
+    background-color: red;
+    z-index: 55;
+    position: relative;
+} */
 
 .search-result-user, .search-result-user:visited {
     text-decoration: none;
