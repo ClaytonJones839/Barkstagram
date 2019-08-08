@@ -1,6 +1,8 @@
 # README
 
 
+
+
 * [Live Site](https://barkstagram-cjones.herokuapp.com/#/login)
 
 This README would normally document whatever steps are necessary to get the
@@ -9,6 +11,8 @@ application up and running.
 
 
 Things you may want to cover:
+
+![](/app/assets/gifs/barkstagram_user_search.gif)
 
 * Ruby version
 
