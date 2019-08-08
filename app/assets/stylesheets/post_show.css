@@ -43,6 +43,8 @@
     height: 40px;
     font-weight: bolder;
     text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .author-link {
@@ -121,4 +123,20 @@
     border: none;
     background: none;
     outline: none;
+}
+
+.delete-button {
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    font-weight: bold;
+    color: white;
+    border: 0.5px solid black;
+    border-radius: 10px;
+}
+
+.delete-button:hover {
+    cursor: pointer;
 }
