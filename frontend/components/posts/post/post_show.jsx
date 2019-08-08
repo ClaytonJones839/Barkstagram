@@ -29,6 +29,7 @@ class PostShow extends React.Component {
 
     handleDelete(e) {
         e.preventDefault();
+        window.confirm("Are you sure you want to delete this post?") &&
         this.props.deletePost(this.props.post.id).then(() => {
             this.props.history.push(`/my-profile`)
         })
