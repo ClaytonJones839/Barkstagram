@@ -50,7 +50,7 @@ class Api::PostsController < ApplicationController
         render json: ["Users are only able to delete pictures they have posted"], status: 401
       end
 
-      render :index
+      render :show
   end
   
   private

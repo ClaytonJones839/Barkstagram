@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBarContainer from '../../nav_bar/nav_bar_container'
 import LikesContainer from '../../likes/likes_container'
+import { withRouter } from 'react-router-dom'
 // import CommentsContainer from './post_comments_container'
 
 class PostShow extends React.Component {
@@ -12,6 +13,7 @@ class PostShow extends React.Component {
             body: ''
         }
         this.handleComment = this.handleComment.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
     componentDidMount() {
@@ -23,6 +25,13 @@ class PostShow extends React.Component {
         return (e) => {
             this.setState({ [field]: e.target.value });
         }
+    }
+
+    handleDelete(e) {
+        e.preventDefault();
+        this.props.deletePost(this.props.post.id).then(() => {
+            this.props.history.push(`/my-profile`)
+        })
     }
 
     handleComment(e) {
@@ -72,7 +81,14 @@ class PostShow extends React.Component {
             )
         })
 
-        const { photoUrl, author, body, like_count, likers, authorPhotoUrl } = this.props.post;
+        const { 
+            photoUrl, 
+            author, 
+            body, 
+            likers, 
+            authorPhotoUrl,
+            user_id
+        } = this.props.post;
 
         return (
         <div>
@@ -87,14 +103,27 @@ class PostShow extends React.Component {
                             />
                             <div className="post-show-detail-box">
                                 <div className="post-author">
-                                    <Link 
-                                        className="author-link"
-                                        to={`/users/${this.props.post.user_id}`}>
-                                            <img className="feed-profile-pic"
-                                                src={authorPhotoUrl}
-                                            />
-                                            {author}
-                                    </Link>
+                                    <div className="post-author-links">
+                                        <Link 
+                                            className="author-link"
+                                            to={`/users/${user_id}`}>
+                                                <img className="feed-profile-pic"
+                                                    src={authorPhotoUrl}
+                                                />
+                                                {author}
+                                        </Link>
+                                    </div>
+                                    <div className="post-author-delete">
+                                    {user_id === this.props.currentUser.id ? (
+                                        <button
+                                            className="delete-button"
+                                            onClick={this.handleDelete}>
+                                        X
+                                        </button>
+                                    ) : (
+                                        <div></div>
+                                    )}
+                                    </div>
                                 </div>
                                 <div className="post-comments">
                                     <span>
@@ -102,7 +131,7 @@ class PostShow extends React.Component {
                                             <div className="post-bio">
                                                 <Link
                                                     className="profile-link"
-                                                    to={`/users/${this.props.post.user_id}`}>
+                                                    to={`/users/${user_id}`}>
                                                     {author}
                                                 </Link>
                                                 &nbsp;{body}
@@ -161,4 +190,4 @@ class PostShow extends React.Component {
     }
 }
 
-export default PostShow;
+export default withRouter(PostShow);
