@@ -35,21 +35,21 @@ class NavSearch extends React.Component {
         
         let userMatches = this.state.matchedUsers.map(user => {
             return(
-                <li 
-                    className="search-result-user"
+                <li className="search-result-li"
                     key={user.id}>
-                    <Link to={`/users/${user.id}`}>
+                    <Link 
+                        className="search-result-user"
+                        to={`/users/${user.id}`}>
                         <img 
                             className="search-result-image"
                             src={user.photoUrl} />
-                        <span className="search-result-username">
+                        <div className="search-result-username">
                             {user.username}
-                        </span>
+                        </div>
                     </Link>
                 </li>
             )
         })
-    
     
         return(
         <div className="search-with-results-wrap">
@@ -60,10 +60,17 @@ class NavSearch extends React.Component {
                 onChange={this.update('searchField')}
                 value={this.state.searchField} 
             />
-            <div className="search-results-container">
-                <ul className="search-results-list">
-                    {userMatches}
-                </ul>
+            <div className="outer-results-wrap">
+                {(this.state.matchedUsers.length > 0) ? (
+                    <div className="search-results-container">
+                        <div id="arrow"></div>
+                        <ul className="search-results-list">
+                            {userMatches}
+                        </ul>
+                    </div>
+                ) : (
+                    <div></div>
+                )}
             </div>
         </div>
     )}

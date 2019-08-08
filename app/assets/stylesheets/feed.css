@@ -15,7 +15,6 @@
 
 .feed-left, .feed-right {
     width: 20%;
-    /* background-color: lightcoral */
 }
 
 .feed-mid {
@@ -52,9 +51,6 @@
     align-content: center;
     width: 500px;
     background-color: white;
-    /* height: 50px; */
-    /* background-color: white;
-    text-decoration: none; */
 }
 
 .feed-image-header-wrap {
@@ -65,7 +61,6 @@
 }
 
 .feed-image-bottom {
-    /* border-top: 1px solid lightgrey; */
     margin-left: 5px;
     font-family: 'Roboto', sans-serif;
     max-height: 200px;
