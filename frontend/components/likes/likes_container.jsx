@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { createLike, deleteLike } from '../../actions/likes_actions';
-import Likes from './post_likes';
+import Likes from './likes';
 import { fetchPost } from '../../actions/posts_actions';
 
 const mapStateToProps = (state, ownProps) => {

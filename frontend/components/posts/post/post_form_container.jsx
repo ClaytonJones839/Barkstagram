@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PostForm from './post_form';
-import { createPost } from '../../actions/posts_actions';
+import { createPost } from '../../../actions/posts_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state) => {

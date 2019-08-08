@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import PostFormContainer from '../posts/post_form_container'
+import PostFormContainer from '../posts/post/post_form_container'
 import NavBarContainer from '../nav_bar/nav_bar_container'
 
 class UserShow extends React.Component {
@@ -33,6 +33,12 @@ class UserShow extends React.Component {
                 followButton: this.props.currentUser.followingIds.includes(parseInt(this.props.profileUser.id)) ? "Unfollow" : "Follow"
             })
         })
+    }
+
+    componentDidUpdate(prevProps) {
+        if (!this.props.profileUser === prevProps.profileUser) {
+            this.props.fetchProfilePosts(this.props.match.params.userId);
+        }
     }
 
 

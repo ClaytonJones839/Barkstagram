@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { fetchPost, deletePost } from '../../actions/posts_actions';
-import { fetchPostComments, createComment, deleteComment } from '../../actions/comments_actions';
-import PostIndexItem from './post_index_item';
+import { fetchPost, deletePost } from '../../../actions/posts_actions';
+import { fetchPostComments, createComment, deleteComment } from '../../../actions/comments_actions';
+import PostIndexItem from './feed_item';
 
 const mapStateToProps = (state, ownProps) => {
     const currentUser = state.entities.users[state.session.id];

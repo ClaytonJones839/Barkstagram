@@ -1,8 +1,8 @@
 import React from 'react';
-import NavBarContainer from '../nav_bar/nav_bar_container'
+import NavBarContainer from '../../nav_bar/nav_bar_container'
 
 import { withRouter } from 'react-router-dom';
-import NavBar from '../nav_bar/nav_bar';
+import NavBar from '../../nav_bar/nav_bar';
 
 class PostForm extends React.Component {
     constructor(props) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
-import LikeContainer from './post_likes_container'
+import LikeContainer from '../../likes/likes_container'
 
 class FeedIndexItem extends React.Component {
     constructor(props) {

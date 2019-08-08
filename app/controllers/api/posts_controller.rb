@@ -9,7 +9,7 @@ class Api::PostsController < ApplicationController
 
   def explore_posts
     @posts = Post.all
-    render :explore
+    render :index
   end
 
   def profile_posts

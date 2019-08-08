@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavBarContainer from '../nav_bar/nav_bar_container'
-import LikesContainer from './post_likes_container'
+import NavBarContainer from '../../nav_bar/nav_bar_container'
+import LikesContainer from '../../likes/likes_container'
 // import CommentsContainer from './post_comments_container'
 
 class PostShow extends React.Component {
@@ -9,18 +9,15 @@ class PostShow extends React.Component {
         super(props)
 
         this.state = {
-            // commentBody: ''
             body: ''
         }
         this.handleComment = this.handleComment.bind(this)
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchPost(this.props.postId)
         this.props.fetchPostComments(this.props.postId)
     }
-
 
     update(field) {
         return (e) => {
@@ -48,7 +45,6 @@ class PostShow extends React.Component {
         }
 
         let postComments = this.props.comments.map(comment => {
-            // debugger
             return(
                 <div
                     key={comment.id - comment.user_id / 3}
