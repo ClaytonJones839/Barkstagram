@@ -1,31 +1,30 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-
+import { withRouter } from 'react-router-dom'
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
 
-    this.handleProfile = this.handleProfile.bind(this);
-    this.handleIndex = this.handleIndex.bind(this);
+        // this.handleFeed = this.handleFeed.bind(this);
+        // this.handleExplore = this.handleExplore.bind(this);
     }
 
+    // handleFeed(e) {
+    //     e.preventDefault();
+    //     this.props.fetchFeedPosts().then(() => {
+    //         this.props.history.push(`/feed`)
+    //     })
+    // }
 
-    handleProfile(e) {
-        e.preventDefault();
-        let path = `/users/${this.props.currentUser.id}`;
-        this.props.history.push(path);
-    }
-
-    handleIndex(e) {
-        e.preventDefault();
-        let path = `/posts`;
-        debugger
-        this.props.history.push(path);
-    }
+    // handleExplore(e) {
+    //     e.preventDefault();
+    //     this.props.fetchExplorePosts().then(() => {
+    //         this.props.history.push(`/explore`)
+    //     })
+    // }
 
     render() {
-
 
     return(
         <section className="nav-bar-container">
@@ -33,14 +32,11 @@ class NavBar extends React.Component {
                 <div className="nav-left-index">
                     <Link 
                         className="nav-icon"
-                        to={`/posts`}>
+                        // onClick={this.handleFeed}
+                        // to="/posts">
+                        to={`/feed`}>
                         <i className='fas fa-camera'></i>
                     </Link>
-                    {/* <button
-                        className="profile-button"
-                        onClick={this.handleIndex}>
-                        index
-                    </button> */}
                 </div>
                 <div className="nav-link-logo">
                     Barkstagram
@@ -57,14 +53,11 @@ class NavBar extends React.Component {
                 <div className="nav-right-index">
                     <Link 
                         className="nav-icon"
-                        to={`/posts`}>
+                        // onClick={this.handleExplore}
+                        // to="/explore">
+                        to={`/explore`}>
                         <i className='far fa-compass'></i>
                     </Link>
-                    {/* <button
-                        className="profile-button"
-                        onClick={this.handleIndex}>
-                        index
-                    </button> */}
                 </div>
                 <div className="nav-right-profile">
                     <Link 
@@ -72,11 +65,6 @@ class NavBar extends React.Component {
                         to={`/users/${this.props.currentUser.id}`}>
                         <i className='fas fa-dog'></i>
                     </Link>
-                    {/* <button
-                        className="profile-button"
-                        onClick={this.handleProfile}>
-                            profile
-                    </button> */}
                 </div>
             </div>
         </section>
@@ -104,4 +92,4 @@ class NavBar extends React.Component {
 
 }
 
-export default NavBar;
+export default withRouter(NavBar);

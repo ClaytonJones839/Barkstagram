@@ -2,17 +2,14 @@ class Api::PostsController < ApplicationController
 
   before_action :require_logged_in
   
-  def index
-    # followIds = current_user.followings.ids
-   # @posts = Post.where(user_id: followIds)
-    # @posts = Post.where(user_id: current_user.followings.ids)
-    @posts = Post.all
-    render :index
-  end
-
   def feed_posts
     @posts = Post.where(user_id: current_user.followings.ids)
     render :index
+  end
+
+  def explore_posts
+    @posts = Post.all
+    render :explore
   end
 
   def profile_posts

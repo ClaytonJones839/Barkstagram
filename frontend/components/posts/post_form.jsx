@@ -59,7 +59,6 @@ class PostForm extends React.Component {
 
 
     errors() {
-        // debugger
         if (!this.state.fileFound) {
             return (
                 <li className="no-file">

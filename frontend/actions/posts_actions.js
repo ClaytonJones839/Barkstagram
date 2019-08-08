@@ -32,8 +32,8 @@ export const clearErrors = () => ({
     errors: []
 });
 
-export const fetchPosts = () => dispatch => (
-    PostAPIUtil.fetchPosts()
+export const fetchExplorePosts = () => dispatch => (
+    PostAPIUtil.fetchExplorePosts()
         .then(posts => dispatch(receiveAllPosts(posts)))
 );
 

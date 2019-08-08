@@ -13,12 +13,6 @@ class FeedIndexItem extends React.Component {
         this.handleComment = this.handleComment.bind(this)
     }
 
-
-    // componentDidMount() {
-    //     this.props.fetchPost(this.props.post.id)
-    // }
-
-
     update(field) {
         return (e) => {
             this.setState({ [field]: e.target.value });
