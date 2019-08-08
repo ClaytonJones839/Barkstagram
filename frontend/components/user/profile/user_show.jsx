@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import PostFormContainer from '../posts/post/post_form_container'
-import NavBarContainer from '../nav_bar/nav_bar_container'
+import PostFormContainer from '../../posts/post/post_form_container'
+import NavBarContainer from '../../nav_bar/nav_bar_container'
 
 class UserShow extends React.Component {
     constructor(props) {

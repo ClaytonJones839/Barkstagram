@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
-import NavBarContainer from '../nav_bar/nav_bar_container'
+import NavBarContainer from '../../nav_bar/nav_bar_container'
 
 class UserUpdateForm extends React.Component {
     constructor(props) {

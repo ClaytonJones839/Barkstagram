@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import { fetchUser } from "../../actions/users_actions";
-import { fetchProfilePosts } from "../../actions/posts_actions";
-import { logout } from '../../actions/session_actions';
-import { createFollow, deleteFollow } from '../../actions/followings_actions'
+import { fetchUser } from "../../../actions/users_actions";
+import { fetchProfilePosts } from "../../../actions/posts_actions";
+import { logout } from '../../../actions/session_actions';
+import { createFollow, deleteFollow } from '../../../actions/followings_actions'
 import UserShow from './user_show';
 
 const mapStateToProps = (state, ownProps) => {

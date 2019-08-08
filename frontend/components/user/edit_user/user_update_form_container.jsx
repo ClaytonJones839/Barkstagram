@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import UserUpdateForm from "./user_update_form";
-import { updateUser } from "../../actions/users_actions";
+import { updateUser } from "../../../actions/users_actions";
 
 const mapStateToProps = (state) => {
     let currentUser = state.entities.users[state.session.id]

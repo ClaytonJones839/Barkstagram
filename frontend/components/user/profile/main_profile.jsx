@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import NavBarContainer from '../nav_bar/nav_bar_container'
+import NavBarContainer from '../../nav_bar/nav_bar_container'
 
 class MainProfile extends React.Component {
     constructor(props) {
