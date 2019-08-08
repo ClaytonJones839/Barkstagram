@@ -128,10 +128,10 @@ class PostShow extends React.Component {
                                             </i>
                                         </div>
                                         <div className="show-likecount">
-                                            {like_count === 1 ? (
-                                                `${like_count} like`
+                                            {likers.length === 1 ? (
+                                                `${likers.length} like`
                                             ) : (
-                                                `${like_count} likes`
+                                                `${likers.length} likes`
                                             )}
                                         </div>
                                     </div>

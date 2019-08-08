@@ -87,10 +87,10 @@ class FeedIndexItem extends React.Component {
                         </i>
                     </div>
                     <div className="feed-image-bottom-likes">
-                        {post.like_count === 1 ? (
+                        {post.likers.length === 1 ? (
                             `1 like`
                         ) : (
-                                `${post.like_count} likes`
+                                `${post.likers.length} likes`
                             )}
                     </div>
                     <div className="feed-image-bottom-bio">

@@ -6,13 +6,13 @@ import { fetchPost } from '../../actions/posts_actions';
 const mapStateToProps = (state, ownProps) => {
     const currentUser = state.entities.users[state.session.id];
     const post = ownProps.post
-    const likers = ownProps.likers
-    const likedStatus = ownProps.likedStatus
+    // const likers = state.entities.posts[ownProps.post.id].likers
+    // const likedStatus = ownProps.likedStatus
     return ({
         currentUser,
-        likers,
-        post,
-        likedStatus
+        // likers,
+        post
+        // likedStatus
     })
 };
 
