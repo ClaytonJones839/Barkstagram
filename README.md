@@ -12,7 +12,7 @@ application up and running.
 
 Things you may want to cover:
 
-![](/app/assets/gifs/barkstagram_user_search.gif)
+![User Search Feature](https://media.giphy.com/media/htw2RPnowdGUAO6hTR/giphy.gif)
 
 * Ruby version
 
