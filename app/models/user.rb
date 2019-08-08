@@ -8,8 +8,14 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_many :posts
-  has_one_attached :photo
+  has_many :posts,
+    dependent: :destroy
+
+  has_one_attached :photo,
+    dependent: :destroy
+
+    has_many :likes, 
+      dependent: :destroy
 
   has_many :active_follows,  
     class_name: :Following,
@@ -23,12 +29,15 @@ class User < ApplicationRecord
 
   has_many :followings, 
     through: :active_follows,
-    source: :following
+    source: :following,
+    dependent: :destroy
 
   has_many :followers, 
     through: :passive_follows, 
-    source: :follower
+    source: :follower,
+    dependent: :destroy
   
+
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

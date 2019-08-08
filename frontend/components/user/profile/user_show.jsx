@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import PostFormContainer from '../../posts/post/post_form_container'
 import NavBarContainer from '../../nav_bar/nav_bar_container'
+import { withRouter } from 'react-router-dom'
 
 class UserShow extends React.Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class UserShow extends React.Component {
         this.handleEditUser = this.handleEditUser.bind(this)
         this.handleFollow = this.handleFollow.bind(this)
         this.handleUnfollow = this.handleUnfollow.bind(this)
+        this.handleDeleteUser = this.handleDeleteUser.bind(this)
     }
 
     componentDidMount() {
@@ -46,6 +48,14 @@ class UserShow extends React.Component {
         e.preventDefault();
         let path = `/edit-profile`;
         this.props.history.push(path);
+    }
+
+    handleDeleteUser(e) {
+        e.preventDefault();
+        window.confirm("Are you sure you want to delete this account?") &&
+            this.props.deleteUser(this.props.profileUser.id).then(() => {
+                this.props.history.push(`/feed`)
+            })
     }
 
     render() {
@@ -144,6 +154,16 @@ class UserShow extends React.Component {
                         <span className="cursor">{followerIds.length} Followers</span>
                         <span className="cursor">{followingIds.length} Following</span>
                     </div>
+                        {(this.props.currentUser.username === "BarkstagramAdmin" && 
+                            this.props.profileUser.username !== "BarkstagramAdmin") ? (
+                            <button
+                                className="profile-button remove-user"
+                                onClick={this.handleDeleteUser}>
+                                Remove User
+                            </button>
+                            ) : (
+                                <div></div>
+                            )}
                     </div>
                 </div>
                     <div className="profile-photo-index-container">
@@ -159,4 +179,4 @@ class UserShow extends React.Component {
     }
 }
 
-export default UserShow;
+export default withRouter(UserShow);

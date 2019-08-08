@@ -36,6 +36,16 @@ class Api::UsersController < ApplicationController
     render :index
   end
 
+  def destroy 
+    @user = User.find(params[:id])
+    if @user && current_user.username == "BarkstagramAdmin"
+      @user.destroy
+      render :show 
+    else 
+      render json: ["Please contact Admin to delete account"]
+    end
+  end
+
   private
 
   def user_params

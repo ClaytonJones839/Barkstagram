@@ -115,7 +115,8 @@ class PostShow extends React.Component {
                                         </Link>
                                     </div>
                                     <div className="post-author-delete">
-                                    {user_id === this.props.currentUser.id ? (
+                                    {user_id === this.props.currentUser.id || 
+                                        this.props.currentUser.username === "BarkstagramAdmin" ? (
                                         <button
                                             className="delete-button"
                                             onClick={this.handleDelete}>

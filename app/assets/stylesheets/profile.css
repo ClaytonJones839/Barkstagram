@@ -163,3 +163,10 @@
     font-size: 22px;
     transform: scale(1.2, 1);
 }
+
+.remove-user {
+    margin-top: 5px;
+    height: 40px;
+    background-color: red;
+    color: white;
+}

@@ -1,7 +1,7 @@
 import merge from 'lodash/merge';
 
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_USER, RECEIVE_ALL_USERS } from '../actions/users_actions';
+import { RECEIVE_USER, RECEIVE_ALL_USERS, REMOVE_USER } from '../actions/users_actions';
 import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/followings_actions';
 
 
@@ -25,6 +25,9 @@ const usersReducer = (state = {}, action) => {
             return merge({}, state, { [action.user.id]: action.user });
         case RECEIVE_CURRENT_USER:
             return merge({}, state, { [action.currentUser.id]: action.currentUser });
+        case REMOVE_USER:
+            delete newState[action.postId]
+            return newState
         default:
             return state;
     }

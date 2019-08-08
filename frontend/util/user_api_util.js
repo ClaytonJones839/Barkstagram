@@ -21,3 +21,10 @@ export const updateUser = (formData, userId) => {
         processData: false
     });
 };
+
+export const deleteUser = id => {
+    return $.ajax({
+        method: "DELETE",
+        url: `api/users/${id}`
+    });
+};
