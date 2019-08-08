@@ -145,6 +145,7 @@ class SignUpForm extends React.Component {
         return (
                 <div className="signup-page">
                 <div className="login-page-left">
+                    <AnimationComponent />
                 </div>
                 <div className="signin-page-right">
 
