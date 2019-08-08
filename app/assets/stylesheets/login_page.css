@@ -60,12 +60,13 @@
 }
 
 .login-left-image-inner-2 {
-    z-index: 1;
+    z-index: 2;
     position: absolute;
     right: 64px;
     width: 250px;
     top: 112px;
     height: 390px;
+    object-fit: cover;
 }
 .login-form {
     color: darkgrey;
@@ -166,4 +167,48 @@
     border-radius: 2px;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+/* #cf3 img {
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+} */
+
+@keyframes cf3FadeInOut {
+  0% {
+    opacity:1;
+  }
+  20% {
+    opacity:1;
+  }
+  40% {
+    opacity:0;
+  }
+  92% {
+    opacity:0;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+.animate-1, .animate-2, .animate-3 { 
+animation-name: cf3FadeInOut;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-duration: 10s;
+animation-direction: alternate;
+z-index: 3;
+}
+
+.animate-1 {
+    animation-delay: 8s;
+}
+.animate-2 {
+    animation-delay: 4s;
+}
+.animate-3 {
+    animation-delay: 0s;
 }
