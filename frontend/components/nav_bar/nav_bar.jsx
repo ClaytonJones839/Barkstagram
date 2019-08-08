@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom'
+import NavSearchContainer from './nav_search'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -24,11 +25,7 @@ class NavBar extends React.Component {
                 </div>
             </div>
             <div className="nav-mid">
-                    <input
-                        className="user-search"
-                        type="text"
-                        placeholder="Search Users"
-                    />
+                <NavSearchContainer />
             </div>
             <div className="nav-right">
                 <div className="nav-right-index">
@@ -47,12 +44,7 @@ class NavBar extends React.Component {
                 </div>
             </div>
         </section>
-
-
-
-    )
-    }
-
+    )}
 }
 
 export default withRouter(NavBar);
