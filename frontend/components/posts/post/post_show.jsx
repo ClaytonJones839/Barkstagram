@@ -18,6 +18,7 @@ class PostShow extends React.Component {
     componentDidMount() {
         this.props.fetchPost(this.props.post.id)
         this.props.fetchPostComments(this.props.post.id)
+        this.props.clearErrors()
     }
 
     update(field) {
@@ -37,17 +38,28 @@ class PostShow extends React.Component {
     handleComment(e) {
         e.preventDefault();
         const comment = { body: this.state.body, post_id: this.props.post.id };
-        this.props.createComment(comment).then(() => {
-            this.props.fetchPost(this.props.post.id)
-        })
+        this.props.createComment(comment)
+            .then(() => {this.props.fetchPost(this.props.post.id)})
+            .then(() => {this.props.clearErrors()}) 
         this.setState({ body: '' });
-
     }
-
 
     closeModal(e) {
         e.preventDefault();
         this.props.closeModal();
+    }
+
+    renderErrors() {
+        if (this.props.errors.length > 0) {
+        return (
+            <ul className="login-errors modal-errors">
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        )};
     }
 
     render() {
@@ -69,7 +81,6 @@ class PostShow extends React.Component {
                         className="profile-link"
                         to={`/users/${comment.user_id}`}
                         >
-
                         {comment.author}
                     </Link>
                     <span className="comment-boyd">
@@ -78,9 +89,10 @@ class PostShow extends React.Component {
                     {comment.user_id === this.props.currentUser.id ? (
                         <button 
                             className="delete-comment-button"
-                            onClick={() => this.props.deleteComment(comment.id).then(() => {
-                                this.props.fetchPost(this.props.post.id)
-                            })}>
+                            onClick={() => this.props.deleteComment(comment.id)
+                                .then(() => {this.props.fetchPost(this.props.post.id)})
+                                .then(() => this.props.clearErrors())
+                            }>
                             X
                         </button>
                     ) : (
@@ -101,6 +113,7 @@ class PostShow extends React.Component {
 
         return (
         <div>
+            {this.renderErrors()}
             <div className="post-box">
                 <img className="post-show-image"
                     className="post-show-image"
@@ -132,6 +145,7 @@ class PostShow extends React.Component {
                         </div>
                     </div>
                     <div className="post-comments">
+
                         <span>
                             {body ? (
                                 <div className="post-bio">
@@ -173,8 +187,8 @@ class PostShow extends React.Component {
                         </div>
                         <div className="show-comment-container">
                             <form className="show-comment-form">
-                                <textarea 
-                                    className="show-textarea" 
+                                <textarea
+                                    className="show-textarea"
                                     value={this.state.body}
                                     onChange={this.update("body")}
                                     placeholder="Add a comment...">

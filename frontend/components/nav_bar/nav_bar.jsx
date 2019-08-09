@@ -8,6 +8,10 @@ class NavBar extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.clearErrors()
+    }
+
     render() {
 
     return(

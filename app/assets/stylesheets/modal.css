@@ -14,3 +14,27 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.modal-errors {
+    position: absolute;
+    background-color: rgb(255, 209, 209);
+    border: 1px solid black;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 12px;
+    top: 364px;
+    left: 586px;
+}
+
+.comment-error-modal {
+    width: 250px;
+    height: 75px;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 18px;
+    border: 1px solid black;
+}

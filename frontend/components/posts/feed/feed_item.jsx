@@ -21,11 +21,15 @@ class FeedIndexItem extends React.Component {
 
     handleComment(e) {
         e.preventDefault();
+        if (!this.state.body === '' ) {
         const comment = { body: this.state.body, post_id: this.props.post.id };
         this.props.createComment(comment).then(() => {
             this.props.fetchPost(this.props.post.id)
         })
         this.setState({ body: '' });
+    } else {
+        this.props.openErrorModal()
+    }
     }
 
 
