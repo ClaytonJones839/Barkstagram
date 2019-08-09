@@ -1,28 +1,12 @@
-
-.post-show-page {
-    margin-top: 140px;
-}
-
-.post-show-container {
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-
-    font-family: 'Roboto', sans-serif;
-
-}
-
 .post-show-image {
     width: 500px;
     height: 500px;
 }
 
 .post-box {
-    width: 800px;
     display: flex;
     border: 1px solid lightgrey;
+    font-family: 'Roboto', sans-serif;
 }
 
 .post-show-detail-box {
@@ -54,7 +38,6 @@
     align-items: center;
 }
 
-
 .post-comments {
     height: 300px;
     border-top: 1px solid lightgrey;
@@ -66,23 +49,6 @@
 }
 .post-show-likes {
     padding-top: 8px;
-    /* padding-left: 8px; */
-}
-
-/* .post-show-buttons {
-    padding-top: 8px;
-    height: 55px;
-    display: flex;
-    flex-direction: column;
-    padding-left: 8px;
-} */
-
-.post-show-wrapper {
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
 }
 
 .link-wrap {
@@ -108,8 +74,6 @@
     padding-right: 5px;
     color: black;
     font-size: 28px;
-    /* border: 1px solid black; */
-    /* transform: scale(1, 1); */
 }
 
 .show-icon:hover {
@@ -126,15 +90,9 @@
 }
 
 .delete-button {
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: red;
-    font-weight: bold;
-    color: white;
-    border: 0.5px solid black;
-    border-radius: 10px;
+    font-size: 18px;
+    color: black;
+    border: none;
     outline: none;
 }
 

@@ -18,7 +18,6 @@ class Likes extends React.Component {
     } 
     handleLike(e) {
         e.preventDefault();
-
         this.props.createLike({ post_id: this.props.post.id }).then(() => {
             this.props.fetchPost(this.props.post.id)
         })

@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 
-import PostIndex from './feed';
+import Feed from './feed';
 import { fetchFeedPosts, deletePost } from '../../../actions/posts_actions';
+import { closeModal, openModal } from '../../../actions/modal_actions';
 
 
 const mapStateToProps = state => {
@@ -15,10 +16,12 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     action: () => dispatch(fetchFeedPosts()),
-    deletePost: id => dispatch(deletePost(id))
+    deletePost: id => dispatch(deletePost(id)),
+    openModal: data => dispatch(openModal("photoShow", data)),
+    closeModal: () => dispatch(closeModal())
 });
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(PostIndex);
+)(Feed);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import LikeContainer from '../../likes/likes_container'
 
 class FeedIndexItem extends React.Component {
@@ -30,11 +30,7 @@ class FeedIndexItem extends React.Component {
 
 
     render() {
-        // debugger
-
         let { post } = this.props;
-
-
         let postComments = Object.values(this.props.post.comments).map(comment => {
             return (
                     <div
@@ -69,12 +65,12 @@ class FeedIndexItem extends React.Component {
                         {post.author}
                     </Link>
                 </div>
-                <Link to={`/posts/${post.id}`}>
+                <div onClick={() => this.props.openModal({ postId: post.id })}>
                     <img
                         className="feed-image"
                         src={post.photoUrl}
                     />
-                </Link>
+                </div>
                 <div className="feed-image-bottom">
                     <div className="feed-image-bottom-buttons">
                         <LikeContainer

@@ -4,6 +4,7 @@ import { fetchProfilePosts } from "../../../actions/posts_actions";
 import { logout } from '../../../actions/session_actions';
 import { createFollow, deleteFollow } from '../../../actions/followings_actions'
 import UserShow from './user_show';
+import { openModal, closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     const profileId = ownProps.match.params.userId
@@ -36,7 +37,9 @@ const mapDispatchToProps = dispatch => ({
     fetchUser: userId => dispatch(fetchUser(userId)),
     deleteUser: user => dispatch(deleteUser(user)),
     createFollow: follow => dispatch(createFollow(follow)),
-    deleteFollow: follow => dispatch(deleteFollow(follow))
+    deleteFollow: follow => dispatch(deleteFollow(follow)),
+    openModal: data => dispatch(openModal("photoShow", data)),
+    closeModal: () => dispatch(closeModal())
 });
 
 export default connect(

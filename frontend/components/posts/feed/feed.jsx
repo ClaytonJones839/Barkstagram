@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
 import NavBarContainer from '../../nav_bar/nav_bar_container'
 import { withRouter } from 'react-router-dom'
 import FeedIndexItemContainer from './feed_item_container';
@@ -8,13 +7,11 @@ import FeedIndexItemContainer from './feed_item_container';
 class PostIndex extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            feedType: this.props.feedType
-        }
     }
 
     componentDidMount() {
         this.props.action();
+        this.props.closeModal()
     }
 
     render() {

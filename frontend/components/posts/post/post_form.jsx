@@ -43,8 +43,8 @@ class PostForm extends React.Component {
     
         
         this.props.createPost(formData)
-            .then( (result) => {
-                this.props.history.push(`/posts/${result.post.id}`)
+            .then(() => {
+                this.props.history.push(`/my-profile`)
             })
         } else {
             this.setState({fileFound: false})

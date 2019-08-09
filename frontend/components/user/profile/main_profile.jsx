@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
 import NavBarContainer from '../../nav_bar/nav_bar_container'
 
 class MainProfile extends React.Component {
@@ -16,6 +15,15 @@ class MainProfile extends React.Component {
     componentDidMount() {
         this.props.fetchProfilePosts(this.props.currentUser.id);
         this.props.fetchUser(this.props.currentUser.id)
+        this.props.closeModal()
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.location.pathname !== this.props.location.pathname) {
+            // this.props.fetchProfilePosts(this.props.match.params.userId);
+            // this.props.fetchUser(this.props.match.params.userId);
+            this.props.closeModal();
+        }
     }
 
 
@@ -35,7 +43,7 @@ class MainProfile extends React.Component {
         if (!this.props.profileUser) {
             return (
                 <h2>
-                    fetching page?
+                    Loading...
                 </h2>
             )
         }
@@ -50,7 +58,7 @@ class MainProfile extends React.Component {
             return (
                 <li key={post.id}>
                     <div className="image-container">
-                        <Link to={`/posts/${post.id}`}>
+                        <div onClick={() => this.props.openModal({ postId: post.id })}>
                             <img
                                 className="user-page-photos"
                                 src={post.photoUrl}
@@ -63,7 +71,7 @@ class MainProfile extends React.Component {
                                     {post.commentIds.length}
                                 </p>
                             </div>
-                        </Link>
+                        </div>
                     </div>
                 </li>
             )

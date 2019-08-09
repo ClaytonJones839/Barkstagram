@@ -3,6 +3,7 @@ import { fetchUser } from "../../../actions/users_actions";
 import { fetchProfilePosts } from "../../../actions/posts_actions";
 import { logout } from '../../../actions/session_actions';
 import MainProfile from './main_profile';
+import { openModal, closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
@@ -25,7 +26,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
     fetchProfilePosts: id => dispatch(fetchProfilePosts(id)),
-    fetchUser: userId => dispatch(fetchUser(userId))
+    fetchUser: userId => dispatch(fetchUser(userId)),
+    openModal: data => dispatch(openModal("photoShow", data)),
+    closeModal: () => dispatch(closeModal())
 });
 
 export default connect(

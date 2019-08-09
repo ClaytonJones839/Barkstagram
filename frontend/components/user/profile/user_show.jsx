@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import PostFormContainer from '../../posts/post/post_form_container'
 import NavBarContainer from '../../nav_bar/nav_bar_container'
 import { withRouter } from 'react-router-dom'
 
@@ -21,6 +19,15 @@ class UserShow extends React.Component {
     componentDidMount() {
         this.props.fetchProfilePosts(this.props.match.params.userId);
         this.props.fetchUser(this.props.match.params.userId)
+        this.props.closeModal();
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.location.pathname !== this.props.location.pathname) {
+            this.props.fetchProfilePosts(this.props.match.params.userId);
+            this.props.fetchUser(this.props.match.params.userId);
+            this.props.closeModal();
+        }
     }
 
     handleFollow(e) {
@@ -62,7 +69,7 @@ class UserShow extends React.Component {
         if (!this.props.profileUser) {
             return (
                 <h2>
-                    fetching page?
+                    Loading...
                 </h2>
             )
         }
@@ -78,7 +85,7 @@ class UserShow extends React.Component {
             return(
                 <li key={post.id}>
                     <div className="image-container">
-                        <Link to={`/posts/${post.id}`}>
+                        <div onClick={() => this.props.openModal({ postId: post.id })}>
                             <img 
                                 className="user-page-photos"
                                 src={post.photoUrl} 
@@ -91,7 +98,7 @@ class UserShow extends React.Component {
                                     {post.commentIds.length}
                                 </p>
                             </div>
-                        </Link>
+                        </div>
                     </div>
                 </li>
             )
