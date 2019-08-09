@@ -17,6 +17,16 @@ class NavSearch extends React.Component {
         this.props.fetchUsers();
     }
 
+    componentDidUpdate(prevProps) {
+        // debugger
+        if (prevProps.location.pathname !== this.props.location.pathname) {
+            this.setState({
+                searchField: "",
+                matchedUsers: []
+            });
+        }
+    }
+
     update(field) {
         return e => {
             let matches = this.props.users
