@@ -15,12 +15,21 @@ Barkstagram focuses on image-sharing, and allows users to interact with with oth
 - User Search
 - Image Modal Components
 
+
 #### User Authentication
--
+User Authentication is secured by incorporating `BCrypt`creating a password-digest, to ensure no users actual password is stored in the database. Session tokens are created at login and destroyed at logout, to store a user's current session as a client-side cookie in the browser. 
+
+User Signup & Login components render an animated display of images. A user is able to login, create an account, or use a demo login account to explore the application.
+&nbsp;<p align="center">
+  <img width="600" src="https://media.giphy.com/media/RKGQBDQl2umYMU5n6Y/giphy.gif"/>
+</p>
+
+
+
 #### Image Uploading
--
+
 #### Like/Comment on Images
--
+
 #### User Search
 &nbsp;<p align="center">
   <img width="600" src="https://media.giphy.com/media/htw2RPnowdGUAO6hTR/giphy.gif"/>
