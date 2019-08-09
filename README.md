@@ -1,7 +1,9 @@
-# Barkstagram
+# [Barkstagram](https://barkstagram-cjones.herokuapp.com/#/login)
 
-[Barkstagram](https://barkstagram-cjones.herokuapp.com/#/login) is a social networking application inspired by [Instagram](https://instagram.com).
-Barkstagram focuses on image-sharing, and allows users to interact with with other members. Image hosting for this application utilizes Amazon Web Services. The backend of Barkstagram is constructed using Ruby on Rails and PostgresSQL, while the frontend incorporates React and Redux.
+Barkstagram is a social networking application inspired by [Instagram](https://instagram.com).
+Barkstagram focuses on image-sharing, and allows users to interact with with other members. 
+
+Image hosting for this application utilizes Amazon Web Services S3 cloud storage. The backend of Barkstagram uses Ruby on Rails and PostgresSQL, allowing for database queries to run effiecently utilizing RESTful API routes. The frontend incorporates React.js with a Redux framework. This enables Barkstagram to a have a state management library to optimize both logging changes to data, and persisting data throughout navagation.
 
 <p align="center">
   <img src="/app/assets/images/profile_demo.png">
@@ -63,4 +65,15 @@ While activley logged in, a user is display a navagation bar with a fixed positi
   <img width="600" src="https://media.giphy.com/media/htw2RPnowdGUAO6hTR/giphy.gif"/>
 </p>
 
+## Future Implementations 
+- The following features are to be incorporated into Barkstagram
+
+### Video Uploading 
+- Users will be able to upload videos as well as images to their profiles, and be able to share them with their followers.
+
+### Optimized Database Query
+- Barkstagram will look to increase efficiency and optimize loading speed with improve database queries. 
+
+### Trending Images Feed 
+- Convert current explore feed to feature the most popular and recent public images.
 
