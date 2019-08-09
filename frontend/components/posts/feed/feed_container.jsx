@@ -5,7 +5,7 @@ import { fetchFeedPosts, deletePost } from '../../../actions/posts_actions';
 
 
 const mapStateToProps = state => {
-    let posts = Object.values(state.entities.posts)
+    let posts = Object.values(state.entities.posts).reverse()
     let currentUser = state.entities.users[state.session.id];
     return({
         currentUser,
