@@ -37,22 +37,22 @@ class UserUpdateForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
-        const formData = new FormData();
-        formData.append('user[id]', this.props.currentUser.id)
-        formData.append('user[bio]', this.state.bio);
-        formData.append('user[username]', this.state.username);
-        // formData.append('user[password]', this.currentUser.password);
-        formData.append('user[email]', this.state.email)
-        if (this.state.photoFile) {
-            formData.append('user[photo]', this.state.photoFile);
+        if (this.props.currentUser.username === "OzzieTheToller_Demo") {
+            window.alert("Unable to modify the demo user. Please try making a new account to test out this feature!")
+        } else {
+            const formData = new FormData();
+            formData.append('user[id]', this.props.currentUser.id)
+            formData.append('user[bio]', this.state.bio);
+            formData.append('user[username]', this.state.username);
+            formData.append('user[email]', this.state.email)
+            if (this.state.photoFile) {
+                formData.append('user[photo]', this.state.photoFile);
+            }
+            this.props.updateUser(formData, this.props.userId )
+                .then((result) => {
+                    this.props.history.push(`/users/${result.user.id}`)
+                })
         }
-        // debugger
-        this.props.updateUser(formData, this.props.userId )
-            .then((result) => {
-                this.props.history.push(`/users/${result.user.id}`)
-            })
-    
     }
 
 

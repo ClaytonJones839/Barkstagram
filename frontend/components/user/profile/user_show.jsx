@@ -54,7 +54,7 @@ class UserShow extends React.Component {
         e.preventDefault();
         window.confirm("Are you sure you want to delete this account?") &&
             this.props.deleteUser(this.props.profileUser.id).then(() => {
-                this.props.history.push(`/feed`)
+                this.props.history.push(`/my-profile`)
             })
     }
 
