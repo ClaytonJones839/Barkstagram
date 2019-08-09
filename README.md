@@ -1,12 +1,8 @@
-# README
+# Barkstagram
 
 
-
-
-* [Live Site](https://barkstagram-cjones.herokuapp.com/#/login)
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Barkstagram](https://barkstagram-cjones.herokuapp.com/#/login) is a social networking application inspired by [Instagram](https://instagram.com).
+Barkstagram focuses on image-sharing, and allows users to interact with with other members. Image hosting for this application utilizes Amazon Web Services. The backend of Barkstagram is constructed using Ruby on Rails and PostgresSQL, while the frontend incorporates React and Redux.
 
 
 
