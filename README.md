@@ -16,7 +16,7 @@ Barkstagram focuses on image-sharing, and allows users to interact with with oth
 - Image Modal Components
 
 
-#### User Authentication
+### User Authentication
 User Authentication is secured by incorporating `BCrypt`creating a password-digest, to ensure no users actual password is stored in the database. Session tokens are created at login and destroyed at logout, to store a user's current session as a client-side cookie in the browser. 
 
 User Signup & Login components render an animated display of images. A user is able to login, create an account, or use a demo login account to explore the application.
@@ -25,42 +25,32 @@ User Signup & Login components render an animated display of images. A user is a
 </p>
 
 
+### Image Uploading
+Barkstagram features Amazon Web Services to host uploaded images. Users are able to post pictures from the profile. When a file is selected, a preview of the image is shown prior to upload. 
 
-#### Image Uploading
+&nbsp;<p align="center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/150px-   Amazon_Web_Services_Logo.svg.png"/>
+  
+  <img src="/app/assets/images/sample_add_post.png"/>
+</p>
 
-#### Like/Comment on Images
+### Like, Comment, & View Images
+Users are able to view individual photo's from their feed or profile. Barkstagram incorporates modal components to show an image once clicked. 
 
-#### User Search
+Users are able to like and comment on photos from both the image modal and the image feed, rending posts from other accounts in which the current user is following. 
+&nbsp;<p align="center">
+  <img width="600" src="https://media.giphy.com/media/S8NXreMBFMQFVdiUED/giphy.gif"/>
+</p>
+
+### User Search
+
 &nbsp;<p align="center">
   <img width="600" src="https://media.giphy.com/media/htw2RPnowdGUAO6hTR/giphy.gif"/>
 </p>
 
-#### Image Modal Components
+### Image Modal Components
 
 
-
-
-
-Things you may want to cover:
-
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
 
