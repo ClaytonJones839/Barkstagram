@@ -11,9 +11,9 @@ Barkstagram focuses on image-sharing, and allows users to interact with with oth
 ## Features 
 - User Authentication
 - Image Uploading
-- Like/Comment on Images
+- Like/Comment & View Images
+- User Profile
 - User Search
-- Image Modal Components
 
 
 ### User Authentication
@@ -42,35 +42,25 @@ Users are able to like and comment on photos from both the image modal and the i
   <img width="600" src="https://media.giphy.com/media/S8NXreMBFMQFVdiUED/giphy.gif"/>
 </p>
 
-### User Search
+### User Profile 
+A user who has created an account on Barkstagram, has their own profile page. From this page, they are able to see details about their profile including how many accounts they are following as well as how many users follow them. 
 
+Images on a users profile have an overlay, that when hovered over, display statistics about that particular image.
+
+&nbsp;<p align="center">
+   <img width="600" src="https://media.giphy.com/media/McsXmdX6g9SJ4EpjLJ/giphy.gif"/>
+ </p>
+  
+
+### User Search
+While activley logged in, a user is display a navagation bar with a fixed position at the top of their browser window. From the nav bar, users are able to:
+
+- Navigate to a feed, displaying images of users they follow (left-camera)
+- Search for other users on Barkstagram, and visit another user's profile (middle)
+- Navigate to an explore-feed, displaying posts from public users, including those they do not currently follow (right-compass)
+- Navigate to their own personal profile (right dog)
 &nbsp;<p align="center">
   <img width="600" src="https://media.giphy.com/media/htw2RPnowdGUAO6hTR/giphy.gif"/>
 </p>
 
-### Image Modal Components
 
-
-
-
-
-Things you may want to cover:
-
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
