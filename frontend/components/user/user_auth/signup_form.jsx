@@ -172,11 +172,16 @@ class SignUpForm extends React.Component {
                                 {this.renderPasswordError()}                                
                             </label>
                             <br />
-                            <input
+                            {/* <input
                                 className="new-user-submit"
                                 type="submit"
                                 value="Sign up"
-                            />
+                            /> */}
+                            <button
+                                className="new-user-submit"
+                                type="submit">
+                                    Sign Up 
+                            </button>
                             <br />
                             <span className="form-footer">
                                 By signing up, you agree to our

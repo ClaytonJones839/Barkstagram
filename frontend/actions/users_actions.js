@@ -1,3 +1,4 @@
+import { push } from 'react-router-redux';
 import * as UserApiUtil from "../util/user_api_util";
 
 export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
@@ -42,9 +43,11 @@ export const fetchUser = userId => dispatch => {
 };
 
 export const deleteUser = id => dispatch => {
-    return UserApiUtil.deleteUser(id).
-        then(user => {
-            return dispatch(removeUser(user));
+    return UserApiUtil.deleteUser(id)
+        .then(user => {
+            return dispatch(removeUser(user))
+        }).then(() => {
+            return dispatch(push('/my-profile'))
         });
 };
 

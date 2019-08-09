@@ -87,11 +87,16 @@ class SessionForm extends React.Component {
                         />
                         </label>
                         <br/>
-                        <input
+                        {/* <input
                             className="session-submit login" 
                             type="submit" 
                             value="Log in"
-                        />
+                        /> */}
+                        <button
+                            className="session-submit login"
+                            type="submit">
+                                Log in
+                        </button>
                         <br/>
                         &nbsp;Or&nbsp;
                         <br />

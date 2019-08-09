@@ -165,12 +165,16 @@ class UserUpdateForm extends React.Component {
                                     onClick={this.handleCancel}>
                                     Cancel
                                 </button>
-                                <input
+                                {/* <input
                                     className="post-button-upload update-submit"
                                     type="submit"
                                     value="Update Profile"
-                                />
-
+                                /> */}
+                                <button
+                                    className="post-button-upload update-submit"
+                                    type="submit">
+                                    Update Profile
+                                </button>
                             </div>
                         </div>
                     </div>

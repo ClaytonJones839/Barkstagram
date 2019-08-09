@@ -32,14 +32,12 @@ class UserShow extends React.Component {
 
     handleFollow(e) {
         e.preventDefault();
-
         this.props.createFollow({ followed_user_id: this.props.profileUser.id })
             .then(() => this.props.fetchUser(this.props.profileUser.id) )
         } 
 
     handleUnfollow(e) {
         e.preventDefault();
-
         this.props.deleteFollow(this.props.profileUser.id).then(() => {
             this.props.fetchUser(this.props.profileUser.id)
         })
@@ -47,22 +45,18 @@ class UserShow extends React.Component {
 
     handleNewPostForm(e) {
         e.preventDefault();
-        let path = `/new-post`;
-        this.props.history.push(path);
+        this.props.history.push(`/new-post`);
     }
 
     handleEditUser(e) {
         e.preventDefault();
-        let path = `/edit-profile`;
-        this.props.history.push(path);
+        this.props.history.push(`/edit-profile`);
     }
 
     handleDeleteUser(e) {
         e.preventDefault();
         window.confirm("Are you sure you want to delete this account?") &&
-            this.props.deleteUser(this.props.profileUser.id).then(() => {
-                this.props.history.push(`/my-profile`)
-            })
+            this.props.deleteUser(this.props.profileUser.id)
     }
 
     render() {

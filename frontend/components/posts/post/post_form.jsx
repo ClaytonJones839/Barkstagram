@@ -144,11 +144,16 @@ class PostForm extends React.Component {
                                     onClick={this.handleCancel}>
                                     Cancel
                                 </button>                                
-                                <input 
+                                {/* <input 
                                     className="post-button-upload"
                                     type="submit"
                                     value="Upload Post"
-                                />
+                                /> */}
+                                <button
+                                    className="post-button-upload"
+                                    type="submit">
+                                    Upload Post
+                                </button>
 
                             </div>
                         </div>

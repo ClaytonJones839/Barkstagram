@@ -7,13 +7,14 @@ import UserShow from './user_show';
 import { openModal, closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger
     const profileId = ownProps.match.params.userId
     const profileUser = state.entities.users[profileId]
 
     let userPosts = null;
     let followerIds = null;
     let followStatus = false;
-
+    // debugger
     let currentUser = state.entities.users[state.session.id];
     if (profileUser) {
         userPosts = Object.values(state.entities.posts)
@@ -35,7 +36,7 @@ const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
     fetchProfilePosts: id => dispatch(fetchProfilePosts(id)),
     fetchUser: userId => dispatch(fetchUser(userId)),
-    deleteUser: user => dispatch(deleteUser(user)),
+    deleteUser: id => dispatch(deleteUser(id)),
     createFollow: follow => dispatch(createFollow(follow)),
     deleteFollow: follow => dispatch(deleteFollow(follow)),
     openModal: data => dispatch(openModal("photoShow", data)),
