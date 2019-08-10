@@ -7,12 +7,12 @@ import { closeModal, openModal } from '../../../actions/modal_actions';
 const mapStateToProps = (state, ownProps) => {
     const currentUser = state.entities.users[state.session.id];
     let comments;
-    // if (state.entities.comments) {
-    //     comments = Object.values(state.entities.comments)
-    // }
+    if (state.entities.comments) {
+        comments = Object.values(state.entities.comments)
+    }
     return ({
-        currentUser
-        // comments
+        currentUser,
+        comments
     })
 };
 
