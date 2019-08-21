@@ -10,6 +10,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
+    position: relative;
 }
 
 .profile-container {
@@ -169,4 +170,30 @@
     height: 40px;
     background-color: red;
     color: white;
+}
+
+.profile-animate {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: bold;
+    align-items: center;
+    transition: all 0.5s;
+}
+​
+.hide {
+    opacity:0;
+    top: 0;
+}
+
+.show {
+  opacity: .8;
+  /* top: 25px; */
+  top: 12%;
+  height: 59px;
+  background-color: white;
+  position: fixed;
+  z-index: 25;
 }

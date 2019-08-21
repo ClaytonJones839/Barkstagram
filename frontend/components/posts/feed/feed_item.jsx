@@ -11,6 +11,7 @@ class FeedIndexItem extends React.Component {
         }
 
         this.handleComment = this.handleComment.bind(this)
+        this.buttonStyling = this.buttonStyling.bind(this)
     }
 
     update(field) {
@@ -33,6 +34,12 @@ class FeedIndexItem extends React.Component {
     }
 
 
+    buttonStyling() {
+        return {
+            opacity: this.state.body ? "1" : ".3",
+        };
+    }
+
     render() {
         let { post } = this.props;
         let postComments = Object.values(this.props.post.comments).map(comment => {
@@ -41,7 +48,7 @@ class FeedIndexItem extends React.Component {
                         key={comment.id}
                         className="post-show-comment">
                         <Link
-                            className="profile-link"
+                            className="feed-profile-link"
                             to={`/users/${comment.user_id}`}>
                             {comment.author}
                         </Link>
@@ -120,6 +127,7 @@ class FeedIndexItem extends React.Component {
                             </textarea>
                             <button
                                 className="submit-comment-button"
+                                style={this.buttonStyling()}
                                 onClick={this.handleComment}>
                                 Post
                             </button>

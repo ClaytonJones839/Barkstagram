@@ -10,21 +10,36 @@ class MainProfile extends React.Component {
         this.logout = this.props.logout
         this.handleNewPostForm = this.handleNewPostForm.bind(this)
         this.handleEditUser = this.handleEditUser.bind(this)
+        this.myScrollFunc = this.myScrollFunc.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchProfilePosts(this.props.currentUser.id);
         this.props.fetchUser(this.props.currentUser.id)
+        window.addEventListener("scroll", this.myScrollFunc);
         this.props.closeModal()
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.location.pathname !== this.props.location.pathname) {
-            // this.props.fetchProfilePosts(this.props.match.params.userId);
-            // this.props.fetchUser(this.props.match.params.userId);
             this.props.closeModal();
         }
     }
+
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.myScrollFunc);
+    }
+
+    myScrollFunc() {
+        let scrollY = window.scrollY;
+        let profileScroll = document.getElementById("profile-scroll");
+        if (scrollY >= 80) {
+            profileScroll.className = "profile-animate show"
+        } else {
+            profileScroll.className = "profile-animate hide"
+        }
+    };
+
 
 
     handleNewPostForm(e) {
@@ -117,6 +132,12 @@ class MainProfile extends React.Component {
                                     <span className="cursor">{followingIds.length} Following</span>
                                 </div>
                             </div>
+                        </div>
+                        <div 
+                            className="profile-animate hide"
+                            id="profile-scroll"
+                        >
+                            {username}
                         </div>
                         <div className="profile-photo-index-container">
                             <ul className="profile-photo-index">

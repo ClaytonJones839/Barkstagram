@@ -2,7 +2,7 @@
     border: none;
     margin: 0px;
     width: 480px;
-    height: 40px;
+    height: 50%;
     outline: none;
     display: flex;
     align-items: center;
@@ -54,7 +54,6 @@
     font-size: 16px;
     font-weight: bold;
     color: #3897f0;
-    padding-top: 5px;
 }
 
 .show-comment-container {
@@ -68,5 +67,6 @@
 }
 
 .post-show-comment {
-    padding-bottom: 3px;
+    padding-bottom: 5px;
+    font-size: 14px;
 }
