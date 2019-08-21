@@ -1,8 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../../nav_bar/nav_bar_container'
-
 import { withRouter } from 'react-router-dom';
-import NavBar from '../../nav_bar/nav_bar';
 
 class PostForm extends React.Component {
     constructor(props) {
@@ -32,7 +30,6 @@ class PostForm extends React.Component {
         }
     }
 
-
     handleSubmit(e) {
         e.preventDefault();
         if (this.state.photoFile) {
@@ -56,7 +53,6 @@ class PostForm extends React.Component {
             this.setState({[field]: e.target.value});
         }
     }
-
 
     errors() {
         if (!this.state.fileFound) {
@@ -144,11 +140,6 @@ class PostForm extends React.Component {
                                     onClick={this.handleCancel}>
                                     Cancel
                                 </button>                                
-                                {/* <input 
-                                    className="post-button-upload"
-                                    type="submit"
-                                    value="Upload Post"
-                                /> */}
                                 <button
                                     className="post-button-upload"
                                     type="submit">
@@ -160,7 +151,7 @@ class PostForm extends React.Component {
                     </div>
                 </form>
             </div>
-            </div>
+        </div>
         );
     }
 }
