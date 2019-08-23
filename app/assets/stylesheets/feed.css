@@ -39,6 +39,7 @@
     border: 1px solid lightgrey;
     margin-bottom: 35px;
     border-radius: 3px;
+    filter: drop-shadow(16px 21px 12px rgba(0,0,0,.2));
 }
 
 .feed-image-header {
@@ -48,6 +49,7 @@
     align-content: center;
     width: 500px;
     background-color: white;
+
 }
 
 .feed-image-header-wrap {
@@ -55,6 +57,12 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid lightgrey;
+}
+
+.feed-image-header-wrap a {
+    display: flex;
+    height: 100%;
+    align-items: center;
 }
 
 .feed-image-bottom {
