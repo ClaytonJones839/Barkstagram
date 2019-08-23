@@ -19,6 +19,7 @@ class UserShow extends React.Component {
     componentDidMount() {
         this.props.fetchProfilePosts(this.props.match.params.userId);
         this.props.fetchUser(this.props.match.params.userId)
+        window.addEventListener("scroll", this.myScrollFunc);
         this.props.closeModal();
     }
 
@@ -28,6 +29,10 @@ class UserShow extends React.Component {
             this.props.fetchUser(this.props.match.params.userId);
             this.props.closeModal();
         }
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.myScrollFunc);
     }
 
     handleFollow(e) {
@@ -154,6 +159,12 @@ class UserShow extends React.Component {
                         <span>{this.props.userPosts.length} Posts</span>
                         <span className="cursor">{followerIds.length} Followers</span>
                         <span className="cursor">{followingIds.length} Following</span>
+                    </div>
+                    <div
+                        className="profile-animate hide-pro"
+                        id="profile-scroll"
+                    >
+                        {username}
                     </div>
                         {(this.props.currentUser.username === "BarkstagramAdmin" && 
                             this.props.profileUser.username !== "BarkstagramAdmin") ? (

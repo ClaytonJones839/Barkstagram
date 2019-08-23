@@ -173,7 +173,24 @@
 }
 
 .profile-animate {
+    opacity: 0;
+}
+​
+.hide-pro {
+    opacity: 0;
+    z-index: -100;
+    top: -25px;
+    color: white;
+}
+
+.show {
     position: absolute;
+    opacity: .8;
+    top: 80px;
+    height: 59px;
+    background-color: white;
+    position: fixed;
+    z-index: 25;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -181,19 +198,4 @@
     font-weight: bold;
     align-items: center;
     transition: all 0.5s;
-}
-​
-.hide {
-    opacity: 0;
-    top: -25px;
-    color: transparent;
-}
-
-.show {
-    opacity: .8;
-    top: 10%;
-    height: 59px;
-    background-color: white;
-    position: fixed;
-    z-index: 25;
 }

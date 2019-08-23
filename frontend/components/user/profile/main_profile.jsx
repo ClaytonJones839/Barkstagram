@@ -36,7 +36,7 @@ class MainProfile extends React.Component {
         if (scrollY >= 80) {
             profileScroll.className = "profile-animate show"
         } else {
-            profileScroll.className = "profile-animate hide"
+            profileScroll.className = "profile-animate hide-pro"
         }
     };
 
@@ -134,7 +134,7 @@ class MainProfile extends React.Component {
                             </div>
                         </div>
                         <div 
-                            className="profile-animate hide"
+                            className="profile-animate hide-pro"
                             id="profile-scroll"
                         >
                             {username}
