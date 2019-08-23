@@ -186,6 +186,7 @@
 .show {
     position: absolute;
     opacity: .8;
+    left: 0;
     top: 80px;
     height: 59px;
     background-color: white;
