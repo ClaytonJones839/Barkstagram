@@ -51,7 +51,7 @@ class UserShow extends React.Component {
     myScrollFunc() {
         let scrollY = window.scrollY;
         let profileScroll = document.getElementById("profile-scroll");
-        if (scrollY >= 80) {
+        if (scrollY >= 120) {
             profileScroll.className = "profile-animate show"
         } else {
             profileScroll.className = "profile-animate hide-pro"
