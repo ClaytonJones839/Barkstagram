@@ -142,7 +142,8 @@
 }
 
 .image-container:hover .image-overlay {
-    opacity: 1;   
+    opacity: 1;
+    cursor: pointer;
 }
 
 .image-overlay-text {

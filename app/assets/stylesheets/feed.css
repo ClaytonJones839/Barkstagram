@@ -3,6 +3,10 @@
     height: 500px;
 }
 
+.feed-image:hover {
+    cursor: pointer;
+}
+
 .feed-container {
     display: flex;
     justify-content: center;
