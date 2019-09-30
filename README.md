@@ -1,5 +1,12 @@
 # [Barkstagram](https://barkstagram-cjones.herokuapp.com/#/login)
 
+## Technologies 
+- Ruby on Rails
+- React
+- JavaScript
+- AWS S3
+
+## Summary
 Barkstagram is a social networking application inspired by [Instagram](https://instagram.com).
 Barkstagram focuses on image-sharing, and allows users to interact with other members. 
 
