@@ -59,7 +59,7 @@ class SessionForm extends React.Component {
             </div>
             <div className="login-page-right">
 
-            <div className="login-form-container">
+            <div className="animated flipInY login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <h1 className="login-logo">
                         Barkstagram
@@ -87,11 +87,6 @@ class SessionForm extends React.Component {
                         />
                         </label>
                         <br/>
-                        {/* <input
-                            className="session-submit login" 
-                            type="submit" 
-                            value="Log in"
-                        /> */}
                         <button
                             className="session-submit login"
                             type="submit">
@@ -108,7 +103,7 @@ class SessionForm extends React.Component {
                 </form>
 
             </div>
-                <div className="login-signup-link">
+                    <div className="login-signup-link animated fadeInRightBig">
                     <div className="center">
                         Don't have an account?
                         &nbsp;

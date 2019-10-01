@@ -149,7 +149,7 @@ class SignUpForm extends React.Component {
                 </div>
                 <div className="signin-page-right">
 
-                    <form onSubmit={this.handleSubmit} className="signup-form-box">
+                    <form onSubmit={this.handleSubmit} className="signup-form-box animated flipInY">
                         <h1 className="login-logo">
                             Barkstagram
                         </h1>
@@ -172,11 +172,6 @@ class SignUpForm extends React.Component {
                                 {this.renderPasswordError()}                                
                             </label>
                             <br />
-                            {/* <input
-                                className="new-user-submit"
-                                type="submit"
-                                value="Sign up"
-                            /> */}
                             <button
                                 className="new-user-submit"
                                 type="submit">
@@ -192,7 +187,7 @@ class SignUpForm extends React.Component {
                             </span>
                         </div>
                     </form>
-                    <div className="login-signup-link">
+                    <div className="login-signup-link animated fadeInRightBig">
                         <div className="center">
                             Have an account?
                             &nbsp;
