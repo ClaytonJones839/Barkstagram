@@ -72,7 +72,31 @@ While actively logged in, a navagation bar is displayed with a fixed position at
   <img width="600" src="https://media.giphy.com/media/htw2RPnowdGUAO6hTR/giphy.gif"/>
 </p>
 
-
+```javascript
+function Modal({ modal, closeModal }) {
+    if (!modal) {
+        return null;
+    }
+    let component;
+    switch (modal.type) {
+        case 'photoShow':
+            component = <PostShowContainer data={modal.data} />;
+            break;
+        case 'commentError':
+            component = <CommentErrorModal />;
+            break;
+        default:
+            return null;
+    }
+    return (
+        <div className="modal-background" onClick={closeModal}>
+            <div className="modal-child" onClick={e => e.stopPropagation()}>
+                {component}
+            </div>
+        </div>
+    );
+}
+```
 
 ## Future Implementations 
 The following features are to be incorporated into Barkstagram.

@@ -128,8 +128,8 @@ class MainProfile extends React.Component {
                                 </div>
                                 <div className="profile-top-down">
                                     <span>{this.props.userPosts.length} posts</span>
-                                    <span className="cursor">{followerIds.length} Followers</span>
-                                    <span className="cursor">{followingIds.length} Following</span>
+                                    <span className="">{followerIds.length} Followers</span>
+                                    <span className="">{followingIds.length} Following</span>
                                 </div>
                             </div>
                         </div>

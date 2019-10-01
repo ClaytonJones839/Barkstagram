@@ -167,8 +167,8 @@ class UserShow extends React.Component {
                     </div>
                     <div className="profile-top-down">
                         <span>{this.props.userPosts.length} Posts</span>
-                        <span className="cursor">{followerIds.length} Followers</span>
-                        <span className="cursor">{followingIds.length} Following</span>
+                        <span className="">{followerIds.length} Followers</span>
+                        <span className="">{followingIds.length} Following</span>
                     </div>
                     <div
                         className="profile-animate hide-pro"
